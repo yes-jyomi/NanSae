@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <meta charset="utf-8" />
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--메인 CSS-->
     <link rel='stylesheet' href='/stylesheets/index.css' />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+
+    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+
+    <!--폰트-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+
   </head>
   <body>
   </head>
@@ -21,15 +27,17 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12">
+          
           <!--메인페이지-->
-          <div class="main">
-            <a class="text-white" href="http://localhost:3000/outdoor/outdoorList">외부활동</a>
-            <a class="text-white" href="http://localhost:3000/users/mypage">그래프</a>
-            <a class="text-white" href="http://localhost:3000/users/mypage">포트폴리오</a>
+          <div class="f">
+            <a class="text-white" href="http://localhost:3000/calendar/write">일정</a>
+            <a class="text-white" href="http://localhost:3000/outdoor">외부활동</a>
+            <a class="text-white" href="http://localhost:3000/graph/score">그래프</a>
+            <a class="text-white" href="http://localhost:3000/portfolio/list">포트폴리오</a>
             <a class="text-white" href="mypagehttp://localhost:3000/users/mypage">회원정보</a>
-            <a class="text-white" href="http://localhost:3000/users/mypage">자격증</a>
+            <a class="text-white" href="http://localhost:3000/license">자격증</a>
             <a class="text-white text-left" href="http://localhost:3000/users/join">회원가입</a>
-            <a class="text-white text-right" href="http://localhost:3000/users/login">로그인</a>
+            <a class="text-white text-right" href="http://localhost:3000/users/login">로그인</a></div>
             <img
               src="../imge/logo.png"
               alt=""
@@ -38,7 +46,6 @@
             <p>
               <a href="http://localhost:3000/users/login"><img src="./imge/start.png" class="start" /></a>
             </p>
-          </div>
         </div>
       </div>
   </body>

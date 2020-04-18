@@ -1,4 +1,11 @@
+/* 배경 */
 .row:nth-of-type(1) {
   background-color: #78cbd7;
-  padding: 5.5% 100px;
+  padding: 12% 100px;
+}
+
+/* 폰트  */
+.f {
+  font-size: 1.05em;
+  font-family: "Noto Sans KR", sans-serif;
 }

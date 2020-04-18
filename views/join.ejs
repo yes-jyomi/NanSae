@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>회원가입</title>
-    <meta charset="utf-8" />
+
+    <title>Join</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--메인 CSS-->
     <link rel='stylesheet' href='/stylesheets/join.css' />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+
+    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+
+    <!--폰트-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+
   </head>
       <body>
         <div class="container-fluid">
           <div class="row">
             <div class="col-xs-12">
+
               <!--회원가입페이지-->
+              <div class = "f">
               <a href="main.html" class="text-left text-white">뒤로가기</a>
-              <a href="login.html" class="text-right text-white">로그인</a>
+              <a href="http://localhost:3000/users/login" class="text-right text-white">로그인</a></div>
+              
+              <div class = "f2">
               <img src="../imge/box1.png" alt="" class="center-block" />
               <form name="f" method="post" onsubmit="return member_check();" action="memberPro_2412.jsp">			
-                <table border="1"  width="600">
-                  <tr><td colspan="3"><b>회원 가입</b></td>
+                <table border ="1"  width="600">
+                  <tr><td colspan="3"><b>회원가입</b></td>
                   </tr>
                   <tr><td width="20%">아이디</td>
                     <td width="50%"><input name="id" size="15"></td>								
@@ -52,7 +64,8 @@
                   </tr>
                 </table>					
               </form>
-              <a href="http://localhost:3000/users/login"><img src="../imge/check1.png" alt="" class="center-block" /></a>
+              <a href= "http://localhost:3000/users/login"><img src="../imge/check1.png" alt="" class="center-block" /></a>
+              </div>
             </div>
           </div>
         </div>

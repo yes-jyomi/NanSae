@@ -1,109 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>회원정보</title>
+    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+
+    <!--메인 CSS-->
+    <link rel="stylesheet" href="/stylesheets/licenseUpdate.css" />
+
+    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-  </head>
-  <body>
-    <!DOCTYPE html>
-    <html lang="ko">
-      <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>난새</title>
-        <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
-        />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-        <style>
-          .row:nth-of-type(1) {
-            background-color: #d77878;
-            padding: 10% 100px;
-          }
-        </style>
-      </head>
-      <body>
-        <div class="container-fluid">
-          <div class="row">
-            <div clas="col-xs-12">
-              <!--회원정보-->
-              <a class="text-white" href="#">회원정보</a
-              ><a class="text-color:#082357" href="#">\profile</a>
 
-              <a class="text-white" href="#">로그아웃</a>
-              <p>
-                <a class="text-white" href="#">일정</a>
-              </p>
-              <p>
-                <a class="text-white" href="#">외부활동</a>
-              </p>
-              <p>
-                <a class="text-white" href="#">포트폴리오</a>
-              </p>
-              <p>
-                <a class="text-white" href="#">그래프</a>
-              </p>
-              <p>
-                <a class="text-white" href="#">자격증</a>
-              </p>
-              <img src="../imge/box3.png" alt="" class="center-block" />
-              <form>
-                <div class="col-sm-3 input1">
-                  <label for="id ">일시</label>
-                  <input name="id" value="" id="id" class="form-control" />
-                </div>
-                <div class="col-sm-3 input2">
-                  <label for="id ">자격증명</label>
-                  <input name="id" value="" id="id" class="form-control" />
-                </div>
-                <div class="col-sm-3 input3">
-                  <label for="id ">발행처</label>
-                  <input name="id" value="" id="id" class="form-control" />
-                </div>
-                <div class="col-sm-3 input4">
-                  <label for="id ">내용</label>
-                  <input name="id" value="" id="id" class="form-control" />
-                </div>
-                <div class="col-sm-3 input5">
-                  <label for="id ">취득내역서</label>
-                  <input name="id" value="" id="id" class="form-control" />
-                </div>
-              </form>
-              <img src="../imge/person.png" alt="" class="center-block" />
-              <img src="../imge/check1.png" alt="" class="center-block" />
+    <!--폰트-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div clas="col-xs-12">
+          <!--회원정보-->
+          <a class="text-white">회원정보</a
+          ><a class="text-color:#082357">\profile</a>
+
+          <a class="text-white" href="#">로그아웃</a>
+          <p>
+            <a class="text-white" href="http://localhost:3000/calendar/write"
+              >일정</a
+            >
+          </p>
+          <p>
+            <a class="text-white" href="http://localhost:3000/portfolio"
+              >외부활동</a
+            >
+          </p>
+          <p>
+            <a
+              class="text-white"
+              href="http://localhost:3000/portfolio/template"
+              >포트폴리오</a
+            >
+          </p>
+          <p>
+            <a class="text-white" href="http://localhost:3000/graph/score"
+              >그래프</a
+            >
+          </p>
+          <p>
+            <a class="text-white" href="http://localhost:3000/license"
+              >자격증</a
+            >
+          </p>
+          <img src="../imge/box3.png" alt="" class="center-block" />
+          <form>
+            <div class="col-sm-3 input1">
+              <label for="id ">일시</label>
+              <input name="id" value="" id="id" class="form-control" />
             </div>
-          </div>
+            <div class="col-sm-3 input2">
+              <label for="id ">자격증명</label>
+              <input name="id" value="" id="id" class="form-control" />
+            </div>
+            <div class="col-sm-3 input3">
+              <label for="id ">발행처</label>
+              <input name="id" value="" id="id" class="form-control" />
+            </div>
+            <div class="col-sm-3 input4">
+              <label for="id ">내용</label>
+              <input name="id" value="" id="id" class="form-control" />
+            </div>
+            <div class="col-sm-3 input5">
+              <label for="id ">취득내역서</label>
+              <input name="id" value="" id="id" class="form-control" />
+            </div>
+          </form>
+          <img src="../imge/person.png" alt="" class="center-block" />
+          <img src="../imge/check1.png" alt="" class="center-block" />
         </div>
-        <script
-          src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-          crossorigin="anonymous"
-        ></script>
-        <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-          crossorigin="anonymous"
-        ></script>
-        <script
-          src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-          crossorigin="anonymous"
-        ></script>
-      </body>
-    </html>
+      </div>
+    </div>
   </body>
 </html>

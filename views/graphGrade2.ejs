@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>회원정보</title>
+    <title>그래프</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -19,7 +19,6 @@
     <html lang="ko">
       <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/stylesheets/mypage.css" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>난새</title>
@@ -27,10 +26,13 @@
           rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
         />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <style>
           .row:nth-of-type(1) {
-            background-color: #d77878;
-            padding: 10% 100px;
+            background-color: #9678d7;
+            border: 90px 100px;
           }
         </style>
       </head>
@@ -38,10 +40,9 @@
         <div class="container-fluid">
           <div class="row">
             <div clas="col-xs-12">
-              <!--회원정보-->
-              <a class="text-white" href="#">회원정보</a
-              ><a class="text-color:#082357" href="#">\profile</a>
-
+              <!--외부활동1-->
+              <a class="text-white" href="#">그래프</a
+              ><a class="text-color:#082357" href="#">\Graph</a>
               <a class="text-white" href="#">로그아웃</a>
               <p>
                 <a class="text-white" href="#">일정</a>
@@ -53,7 +54,7 @@
                 <a class="text-white" href="#">포트폴리오</a>
               </p>
               <p>
-                <a class="text-white" href="#">그래프</a>
+                <a class="text-white" href="#">회원정보</a>
               </p>
               <p>
                 <a class="text-white" href="#">자격증</a>
@@ -61,16 +62,39 @@
               <img src="../imge/box3.png" alt="" class="center-block" />
               <form>
                 <div class="col-sm-3 input1">
-                  <label for="id ">PW</label>
+                  <label for="id ">날짜</label>
                   <input name="id" value="" id="id" class="form-control" />
                 </div>
+                <div class="col-sm-3 input2">
+                  <label for="pwd ">과목명</label>
+                  <input name="pwd" value="" id="pwd" class="form-control" />
+                </div>
+                <div class="col-sm-3 input3">
+                  <label for="pwd ">성적</label>
+                  <input name="pwd" value="" id="pwd" class="form-control" />
+                </div>
               </form>
-              <img src="../imge/person.png" alt="" class="center-block" />
-              <img src="../imge/next.png" alt="" class="center-block" />
               <img src="../imge/check1.png" alt="" class="center-block" />
+              <img src="../imge/back.png" alt="" class="center-block" />
+              <img src="../imge/next.png" alt="" class="center-block" />
             </div>
           </div>
         </div>
+        <script
+          src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"
+        ></script>
       </body>
     </html>
   </body>

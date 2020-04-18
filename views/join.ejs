@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>회원가입</title>
+    <meta charset="utf-8" />
+    <link rel='stylesheet' href='/stylesheets/join.css' />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+      <body>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12">
+              <!--회원가입페이지-->
+              <a href="main.html" class="text-left text-white">뒤로가기</a>
+              <a href="login.html" class="text-right text-white">로그인</a>
+              <img src="../imge/box1.png" alt="" class="center-block" />
+              <form name="f" method="post" onsubmit="return member_check();" action="memberPro_2412.jsp">			
+                <table border="1"  width="600">
+                  <tr><td colspan="3"><b>회원 가입</b></td>
+                  </tr>
+                  <tr><td width="20%">아이디</td>
+                    <td width="50%"><input name="id" size="15"></td>								
+                  <tr><td>비밀번호</td>
+                    <td><input type="password" name="pwd" size="15"></td>
+                  </tr>
+                  <tr><td>이름</td>
+                    <td><input name="name" size="15"></td>
+                  </tr>
+                  <tr><td>Email</td>
+                    <td><input name="email" size="30"></td>								
+                  </tr>
+                  <tr><td>우편번호</td>
+                    <td><input name="zipcode" size="5"></td>
+                  </tr>
+                  <tr><td>전화번호</td>
+                    <td><input name="phone" size="12"></td>
+                  </tr>
+                  <tr><td>주소</td>
+                    <td><input name="address" size="45"></td>
+                  </tr>
+                  <tr><td>블로그</td>
+                    <td><input type="text" name="blog"></td>
+                  </tr>
+                </table>					
+              </form>
+              <a href="http://localhost:3000/users/login"><img src="../imge/check1.png" alt="" class="center-block" /></a>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  </body>
+</html>

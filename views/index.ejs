@@ -2,34 +2,44 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8" />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
-
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyAWnx8yp2eGG3RCDrdt9ejitTv4_yvMIMc",
-        authDomain: "nansae-bcc5d.firebaseapp.com",
-        databaseURL: "https://nansae-bcc5d.firebaseio.com",
-        projectId: "nansae-bcc5d",
-        storageBucket: "nansae-bcc5d.appspot.com",
-        messagingSenderId: "688614872373",
-        appId: "1:688614872373:web:d168e1265d9144256e287c",
-        measurementId: "G-TWHPHEJBQN"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-    </script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <!--메인페이지-->
+          <div class="main">
+            <a class="text-white" href="http://localhost:3000/outdoor/outdoorList">외부활동</a>
+            <a class="text-white" href="http://localhost:3000/users/mypage">그래프</a>
+            <a class="text-white" href="http://localhost:3000/users/mypage">포트폴리오</a>
+            <a class="text-white" href="mypagehttp://localhost:3000/users/mypage">회원정보</a>
+            <a class="text-white" href="http://localhost:3000/users/mypage">자격증</a>
+            <a class="text-white text-left" href="http://localhost:3000/users/join">회원가입</a>
+            <a class="text-white text-right" href="http://localhost:3000/users/login">로그인</a>
+            <img
+              src="../imge/logo.png"
+              alt=""
+              class="center-block"
+            />
+            <p>
+              <a href="http://localhost:3000/users/login"><img src="./imge/start.png" class="start" /></a>
+            </p>
+          </div>
+        </div>
+      </div>
   </body>
 </html>

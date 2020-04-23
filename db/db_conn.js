@@ -4,7 +4,7 @@ var config = require('./db_info').local;
 module.exports = function() {
     return {
         init: function() {
-            return mysql.create({
+            return mysql.createConnection({
                 host: config.host,
                 port: config.port,
                 user: config.user,

@@ -9,3 +9,9 @@
   font-size: 1.05em;
   font-family: "Noto Sans KR", sans-serif;
 }
+
+/* 버튼  */
+.btn1 {
+  background: transparent;
+  border: none;
+}

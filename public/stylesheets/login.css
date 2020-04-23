@@ -1,7 +1,7 @@
 /* 배경 */
 .row:nth-of-type(1) {
   background-color: #78cbd7;
-  padding: 12% 100px;
+  padding: 81px 100px;
 }
 
 /* 폰트  */
@@ -10,8 +10,78 @@
   font-family: "Noto Sans KR", sans-serif;
 }
 
+/* box4이미지  */
+.box4 {
+  position: relative;
+  left: 193px;
+  top: 50px;
+}
+
+/* text/뒤로가기  */
+.back {
+  position: relative;
+  top: -280px;
+  right: 60px;
+}
+
+/* text/회원가입  */
+.join {
+  position: relative;
+  top: -280px;
+  right: -1235px;
+}
+
+/* check1 이미지  */
+.check1 {
+  position: relative;
+  left: 433px;
+  top: -100px;
+}
+
 /* 버튼  */
 .btn1 {
   background: transparent;
   border: none;
+}
+
+/* 버튼  */
+.Login {
+  color: #082357;
+  position: relative;
+  top: -390px;
+  right: -250px;
+}
+
+/* text box/ID  */
+.ID {
+  color: #082357;
+  position: relative;
+  top: -320px;
+  right: -450px;
+}
+
+/* text box/PW  */
+.PW {
+  color: #082357;
+  position: relative;
+  top: -210px;
+  right: -240px;
+}
+
+/* a태그/ id  */
+.id {
+  background-color: #082357;
+  color: #ffffff;
+  position: relative;
+  top: -320px;
+  right: -550px;
+}
+
+/*  a태그/ pwd  */
+.pwd {
+  background-color: #082357;
+  color: #ffffff;
+  position: relative;
+  top: -210px;
+  right: -338px;
 }

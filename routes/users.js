@@ -71,12 +71,4 @@ router.post('/login', function(req, res, next) {
   });
 });
 
-router.get('/pwdck', function(req, res, next) {
-  res.render('passwordCheck');
-});
-
-router.post('/pwdck', function(req, res, next) {
-
-});
-
 module.exports = router;

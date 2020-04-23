@@ -45,7 +45,30 @@ router.get('/login', function(req, res, next) {
 });
 
 router.post('/login', function(req, res, next) {
+  const id = req.body.id;
+  const pwd = req.body.pwd;
 
+  let sql = "SELECT user_id, user_pwd FROM user WHERE user_id = ?";
+  conn.query(sql, [id], function(err, rows) {
+    if (err) {
+      console.error("err: " + err);
+    } else {
+      if (rows[0] === undefined) {
+        console.log('id 를 잘못 입력하셨습니다.');
+        res.redirect('/users/login');
+      } else {
+        const dbPwd = rows[0].user_pwd;
+
+        if (pwd === dbPwd) {
+          console.log('로그인 완료');
+          res.redirect('/calendar');
+        } else {
+          console.log('비밀번호가 틀렸습니다.');
+          res.redirect('/users/login');
+        }
+      }
+    }
+  });
 });
 
 router.get('/pwdck', function(req, res, next) {

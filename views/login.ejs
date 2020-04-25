@@ -12,40 +12,40 @@
     <link rel='stylesheet' href='/stylesheets/login.css' />
 
     <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <!--폰트-->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 
   </head>
-      <body>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xs-12">
+      <body class="body">
+        <nav id="topNav" class="container-fluid">
+          <a href="http://localhost:3000" class="back text-white">뒤로가기</a>
+          <a href="http://localhost:3000/users/join" class="join text-white">회원가입</a>
+        </nav>
 
-              <!--로그인페이지-->
-              <div class = f>
-                <a href="http://localhost:3000" class="back text-left text-white">뒤로가기</a>
-                <a href="http://localhost:3000/users/join" class="join text-right text-white">회원가입</a>
-                <img src="../imge/box4.png" alt="" class="box4" />
-              </div>
-                <Form name = "f" method="post" >
-                      <a class="Login" align="center" colspan="2"><h4>Login</h4></a>
-                        <a class="ID" >ID</a>
-                        <input class="id" type="text" name="id"></td>
-                        <a class="PW">PW</a>
-                        <input class="pwd type="password" name="pwd">
-                        <button type="submit" class="btn1">
-                          <img src="../imge/check1.png" alt="" class="check1" />
-                        </button>
-                </form>
-            </div>
-          </div>
+        <div class="mx-auto text-center login-section">
+          <div class="login">
+            <div class="login-title">Login</div>
+            <div class="login-form">
+
+          <%
+            if (!user_id) {
+          %>
+                  <form name="f" method="post">
+                    <div class="login-id">
+                      <input type="text" id="id" name="id">
+                    </div>
+                    <div class="login-pw">
+                      <input type="password" id="pwd" name="pwd">
+                    </div>
+                    <button type="submit" class="login-btn">로그인</button>
+                  </form>
+
+          <%
+            }
+          %>
         </div>
-      </body>
-  </html>
+      </div>
+    </div>
+  </body>
+</html>

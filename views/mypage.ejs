@@ -33,7 +33,7 @@
           <a class="text-white">회원정보</a>
           <a class="text-color:#082357">\profile</a>
 
-          <a class="text-white" href="#">로그아웃</a>
+          <a class="text-white" href="/users/logout">로그아웃</a>
           <p>
             <a class="text-white" href="http://localhost:3000/calendar/write"
               >일정</a
@@ -62,48 +62,65 @@
             >
           </p>
           <img src="../imge/box3.png" alt="" class="center-block" />
-          <form name="f" method="post">
+          <form name="f" method="post" action="/users/mypage">
             <table border="1" width="600">
               <tr>
                 <td colspan="3"><b>회원가입 수정</b></td>
               </tr>
+
+              <%
+                for (var i = 0; i < rows.length; i++) {
+                  var data = rows[i];
+                  var id = data.user_id;
+                  var pwd = data.user_pwd;
+                  var name = data.user_name;
+                  var phone = data.user_phone;
+                  var email = data.user_email;
+                  var zipcode = data.user_zipcode;
+                  var address = data.user_address;
+                  var blog = data.user_blog;
+                }
+              %>
+
               <tr>
                 <td width="20%">아이디</td>
-                <td width="50%"><input name="id" size="15" /></td>
+                <td width="50%"><input name="id" size="15" value="<%= id %>" readonly/></td>
               </tr>
 
               <tr>
                 <td>비밀번호</td>
-                <td><input type="password" name="pwd" size="15" /></td>
+                <td><input type="password" name="pwd" size="15" value="<%= pwd %>"/></td>
               </tr>
               <tr>
                 <td>이름</td>
-                <td><input name="name" size="15" /></td>
-              </tr>
-              <tr>
-                <td>Email</td>
-                <td><input name="email" size="30" /></td>
-              </tr>
-              <tr>
-                <td>우편번호</td>
-                <td><input name="zipcode" size="5" /></td>
+                <td><input name="name" size="15" value="<%= name %>" /></td>
               </tr>
               <tr>
                 <td>전화번호</td>
-                <td><input name="phone" size="12" /></td>
+                <td><input name="phone" size="12" value="<%= phone %>" /></td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td><input name="email" size="30" value="<%= email %>" /></td>
+              </tr>
+              <tr>
+                <td>우편번호</td>
+                <td><input name="zipcode" size="5" value="<%= zipcode %>" /></td>
               </tr>
               <tr>
                 <td>주소</td>
-                <td><input name="address" size="45" /></td>
+                <td><input name="address" size="45" value="<%= address %>" /></td>
               </tr>
               <tr>
                 <td>블로그</td>
-                <td><input type="text" name="blog" /></td>
+                <td><input type="text" name="blog" value="<%= blog %>" /></td>
               </tr>
             </table>
+            <img src="../imge/person.png" alt="" class="center-block" />
+            <button type="submit" style="background: transparent; border: none;">
+              <img src="../imge/modify.png" alt="" class="center-block" />
+            </button>
           </form>
-          <img src="../imge/person.png" alt="" class="center-block" />
-          <img src="../imge/modify.png" alt="" class="center-block" />
         </div>
       </div>
     </div>

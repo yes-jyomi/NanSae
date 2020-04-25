@@ -1,87 +1,89 @@
-/* 배경 */
-body {
-  background-color: #78cbd7;
-  padding: 81px 100px;
-}
+a:link { color: white; text-decoration: none; }
+a:visited { color: white; text-decoration: none; }
+a:hover { color: white; text-decoration: none; }
 
-/* 폰트  */
-.f {
-  font-size: 1.05em;
+.body {
+  width: 100%;
+  background-color: #78cbd7;
   font-family: "Noto Sans KR", sans-serif;
 }
 
-/* box4이미지  */
-.box4 {
+#topNav {
+  font-size: 1.25em;
+  padding: 35px 45px;
+}
+
+#topNav .join {
+  float: right;
+}
+
+.login-section {
+  max-width: 100%;
+  padding: 0;
+  margin-top: 120px;
+}
+
+.login {
+  width: 654px;
+  height: 460px;
+  background-color: white;
+  box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.164);
+  margin: auto;
   position: relative;
-  left: 193px;
-  top: 50px;
+  padding-top: 45px;
+  text-align: center !important;
+  
 }
 
-/* text/뒤로가기  */
-.back {
-  position: relative;
-  top: -280px;
-  right: 60px;
-}
-
-/* text/회원가입  */
-.join {
-  position: relative;
-  top: -280px;
-  right: -1235px;
-}
-
-/* check1 이미지  */
-.check1 {
-  position: relative;
-  left: 433px;
-  top: -100px;
-}
-
-/* 버튼  */
-.btn1 {
-  background: transparent;
-  border: none;
-}
-
-/* 버튼  */
-.Login {
+.login-title {
   color: #082357;
-  position: relative;
-  top: -390px;
-  right: -250px;
+  font-size: 25px;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
-/* text box/ID  */
-.ID {
-  color: #082357;
-  position: relative;
-  top: -320px;
-  right: -450px;
+.login-id {
+  margin-bottom: 15px;
 }
 
-/* text box/PW  */
-.PW {
-  color: #082357;
-  position: relative;
-  top: -210px;
-  right: -240px;
+h3 {
+  display: inline;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
-/* a태그/ id  */
-.id {
+.login-id input, .login-pw input{
+  width: 381px;
+  height: 55px;
+  border: solid 2px #082357;
   background-color: #082357;
-  color: #ffffff;
-  position: relative;
-  top: -320px;
-  right: -550px;
-}
+  color: white;
+  outline: none;
+  padding-left: 20px;
+  /* text-align: center; */
+  letter-spacing: .0625em;
+ 
+} 
 
-/*  a태그/ pwd  */
-.pwd {
+.login-btn {
+  width: 381px;
+  height: 64px;
+  border: 2px solid #082357;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  
+  color: #082357;
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 27px;
+  outline: none;
+  -webkit-appearance: none;
+  padding: 0;
+
+  letter-spacing: .0625em;
+
+}
+.login-btn:hover {
   background-color: #082357;
-  color: #ffffff;
-  position: relative;
-  top: -210px;
-  right: -338px;
+  color: #fff;
 }

@@ -1,5 +1,5 @@
 /* 배경 */
-.row:nth-of-type(1) {
+body {
   background-color: #78cbd7;
   padding: 81px 100px;
 }

@@ -6,12 +6,27 @@
 
 /* 폰트  */
 .f {
+  color: #082357;
   font-size: 1.05em;
   font-family: "Noto Sans KR", sans-serif;
 }
 
-/* 버튼  */
+/* 완료 버튼  */
 .btn1 {
   background: transparent;
   border: none;
+}
+
+/* 버튼  */
+.check1 {
+  position: relative;
+  left: 400px;
+}
+
+/* 버튼  */
+.table {
+  position: relative;
+  width: 100px;
+  left: 200px;
+  top: -10px;
 }

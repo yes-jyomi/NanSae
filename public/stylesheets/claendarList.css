@@ -6,6 +6,18 @@
 
 /* 폰트  */
 .f {
-  font-size: 1.05em;
-  font-family: "Noto Sans KR", sans-serif;
+  position: relative;
+  top: -55;
+}
+
+.box2 {
+  position: relative;
+  left: 370px;
+  top: -120px;
+}
+
+.save {
+}
+
+.load {
 }

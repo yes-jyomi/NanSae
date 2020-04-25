@@ -133,6 +133,7 @@ router.post('/login', function(req, res, next) {
 
 router.get('/logout', function(req, res, next) {
   req.session.destroy(function(err) {
+    console.log('로그아웃');
     res.redirect('/users/login');
   });
 });

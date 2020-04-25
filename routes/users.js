@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
   res.redirect('/users/mypage', { user_id: req.session.user_id });
 });
 
+
 function get_data(id, res) {
   const sql = "SELECT user_id, user_pwd, user_name, user_phone, user_email, " +
       "user_zipcode, user_address, user_blog FROM user WHERE user_id = ?";

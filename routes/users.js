@@ -41,7 +41,14 @@ router.post('/join', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-  res.render('login');
+  if (!req.session.user_id)
+    res.render('login', { user_id: req.session.user_id });
+  else {
+    console.log('이미 로그인됨');
+
+    res.render('calendar');
+  }
+
 });
 
 router.post('/login', function(req, res, next) {
@@ -50,25 +57,37 @@ router.post('/login', function(req, res, next) {
 
   let sql = "SELECT user_id, user_pwd FROM user WHERE user_id = ?";
   conn.query(sql, [id], function(err, rows) {
-    if (err) {
+    if (err)
       console.error("err: " + err);
-    } else {
-      if (rows[0] === undefined) {
-        console.log('id 를 잘못 입력하셨습니다.');
-        res.redirect('/users/login');
-      } else {
-        const dbPwd = rows[0].user_pwd;
 
-        if (pwd === dbPwd) {
-          console.log('로그인 완료');
-          res.redirect('/calendar');
-        } else {
-          console.log('비밀번호가 틀렸습니다.');
-          res.redirect('/users/login');
-        }
-      }
+    if (!rows[0]) {
+      console.log('id 를 잘못 입력하셨습니다.');
+      res.redirect('/users/login');
+    }
+
+    const user = rows[0];
+
+    const dbPwd = user.user_pwd;
+    if (pwd === dbPwd) {
+      console.log('로그인 완료');
+
+      // 세션 설정
+      req.session.user_id = user.user_id;
+      req.session.save(function() {
+        return res.redirect('/calendar');
+      });
+    } else {
+      console.log('비밀번호가 틀렸습니다.');
+      res.redirect('/users/login');
     }
   });
+});
+
+router.get('/logout', function(req, res, next) {
+  req.session.destroy(function(err) {
+    res.redirect('/users/login');
+  });
+  res.redirect('/users/login');
 });
 
 module.exports = router;

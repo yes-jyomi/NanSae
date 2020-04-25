@@ -23,31 +23,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 
   </head>
-      <body>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xs-12">
+  <body>
 
-              <!--로그인페이지-->
-              <div class = f>
-                <a href="http://localhost:3000" class="back text-left text-white">뒤로가기</a>
-                <a href="http://localhost:3000/users/join" class="join text-right text-white">회원가입</a>
-                <img src="../imge/box4.png" alt="" class="box4" />
-              </div>
-              <div class = "f2">
-                <Form name = "f" method="post" >
-                      <a class="Login" align="center" colspan="2"><h4>Login</h4></a>
-                        <a class="ID" >ID</a>
-                        <input class="id" type="text" name="id"></td>
-                        <a class="PW">PW</a>
-                        <input class="pwd type="text" name="pwd">
-                        <button type="submit" class="btn1">
-                      <img src="../imge/check1.png" alt="" class="check1" />
-                    </button>
-                </form>
-              </div>
-            </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+
+          <!--로그인페이지-->
+          <div class = f>
+            <a href="javascript:history.back();" class="back text-left text-white">뒤로가기</a>
+            <a href="/users/join" class="join text-right text-white">회원가입</a>
+            <img src="../imge/box4.png" alt="" class="box4" />
           </div>
+
+          <%
+            if (!user_id) {
+          %>
+            <form name = "f" method="post" action="/users/login">
+              <a class="Login" align="center" colspan="2"><h4>Login</h4></a>
+              <a class="ID" >ID</a>
+              <input class="id" type="text" name="id">
+              <a class="PW">PW</a>
+              <input class="pwd" type="text" name="pwd">
+              <button type="submit" class="btn1">
+                <img src="../imge/check1.png" alt="" class="check1" />
+              </button>
+            </form>
+          <%
+            }
+          %>
         </div>
-      </body>
-  </html>
+      </div>
+    </div>
+  </body>
+</html>

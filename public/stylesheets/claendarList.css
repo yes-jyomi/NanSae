@@ -7,13 +7,14 @@
 /* 폰트  */
 .f {
   position: relative;
-  top: -55;
+  top: -109px;
+  right: 47px;
 }
 
 .box2 {
   position: relative;
   left: 370px;
-  top: -120px;
+  top: -300px;
 }
 
 .save {

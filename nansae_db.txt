@@ -1,0 +1,71 @@
+create database nansae default character set utf8;
+
+create table user (
+user_id varchar(50) primary key,
+user_pwd varchar(50) not null,
+user_name varchar(50) not null,
+user_phone varchar(50) not null,
+user_zipcode int(10) not null,
+user_address varchar(70) not null,
+user_email varchar(50) not null,
+user_blog varchar(50)
+);
+
+create table score (
+score_idx int primary key auto_increment,
+user_id varchar(50) not null,
+score_name varchar(50) not null,
+score_result int(11) not null,
+score_date date not null,
+score_classify int(2)
+);
+
+create table activity (
+act_idx int primary key auto_increment,
+user_id varchar(50) not null,
+act_name varchar(50) not null,
+act_start datetime not null,
+act_end datetime not null,
+act_content mediumtext not null
+);
+
+create table project (
+pr_idx int primary key auto_increment,
+user_id varchar(50) not null,
+pr_name varchar(50) not null,
+pr_skill varchar(50) not null,
+pr_comment mediumtext not null
+);
+
+create table portfolio (
+port_idx int primary key auto_increment,
+user_id varchar(50) not null,
+port_template int(4) not null,
+port_job varchar(50) not null,
+port_skill varchar(50) not null,
+port_lang varchar(50) not null
+);
+
+create table education (
+edu_idx int primary key auto_increment,
+user_id varchar(50) not null,
+edu_name varchar(50) not null,
+edu_start date not null,
+edu_end date not null
+);
+
+create table company (
+comp_idx int primary key auto_increment,
+user_id varchar(50) not null,
+comp_name varchar(50) not null,
+comp_start date not null,
+comp_end date not null,
+comp_project mediumtext not null
+);
+
+create table book (
+book_idx int primary key auto_increment,
+user_id varchar(50) not null,
+book_name varchar(50) not null,
+book_comment mediumtext not null
+);

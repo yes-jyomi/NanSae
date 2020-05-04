@@ -70,8 +70,12 @@ router.post('/join', function(req, res, next) {
   const phone = req.body.phone;
   const email = req.body.email;
   const zipcode = req.body.zipcode;
-  const address = req.body.address;
+  const roadAddress = req.body.roadAddress;
+  const detailAddress = req.body.detailAddress;
+  const address = roadAddress + ", " + detailAddress;
   let blog = req.body.blog;
+
+  console.log('zipcode: ' + zipcode + ', roadAddr: ' + roadAddress + ', detailAddr: ' + detailAddress + 'addr: ' + address);
 
   const empty = (blog) => {
     if (blog === null) blog = "";

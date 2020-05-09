@@ -1,0 +1,12 @@
+/* 배경 */
+.body {
+  width: 100%;
+  background-color: #78afd7;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 폰트  */
+.f {
+  font-size: 1.05em;
+  font-family: "Noto Sans KR", sans-serif;
+}

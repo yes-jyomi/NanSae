@@ -11,45 +11,37 @@ a:hover {
   text-decoration: none;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
   opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
   color: white;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder {
+  /* Microsoft Edge */
   color: white;
 }
 
 .body {
   width: 100%;
-  background-color: #78cbd7;
+  background-color: #f5f6f7;
   font-family: "Noto Sans KR", sans-serif;
-}
-
-#topNav {
-  font-size: 1.25em;
-  padding: 35px 45px;
-}
-
-#topNav .join {
-  float: right;
 }
 
 .login-section {
   max-width: 100%;
   padding: 0;
-  margin-top: 120px;
+  margin-top: 100px;
 }
 
 .login {
   width: 654px;
   height: 460px;
-  background-color: white;
-  box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.164);
   margin: auto;
   position: relative;
   padding-top: 45px;
@@ -57,10 +49,10 @@ a:hover {
 }
 
 .login-title {
-  color: #082357;
-  font-size: 25px;
+  color: #004da0;
+  font-size: 50px;
   font-weight: 800;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 50px;
 }
 
@@ -68,32 +60,44 @@ a:hover {
   margin-bottom: 15px;
 }
 
-h3 {
-  display: inline;
-  font-family: "Noto Sans KR", sans-serif;
+.login-id label {
+  position: absolute;
+  top: 150px;
+  left: 130px;
+  padding: 0.8em 0.5em;
+  color: #000000;
 }
 
 .login-id input,
 .login-pw input {
   width: 381px;
   height: 55px;
-  border: solid 2px #082357;
-  background-color: #082357;
-  color: white;
+  border: solid 2px #b2c1cc;
+  background-color: white;
+  color: black;
   outline: none;
   padding-left: 20px;
+  margin: 15px;
   /* text-align: center; */
-  letter-spacing: 0.0625em;
+  letter-spacing: 0.625em;
+}
+
+.login-pw label {
+  position: absolute;
+  top: 250px;
+  left: 130px;
+  padding: 0.8em 0.5em;
+  color: #000000;
 }
 
 .login-btn {
   width: 381px;
   height: 64px;
-  border: 2px solid #082357;
-  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  background-color: #007bff;
   cursor: pointer;
 
-  color: #082357;
+  color: white;
   font-size: 20px;
   font-weight: 800;
   margin-top: 27px;
@@ -104,6 +108,76 @@ h3 {
   letter-spacing: 0.0625em;
 }
 .login-btn:hover {
-  background-color: #082357;
+  background-color: #007bff;
   color: #fff;
+}
+
+.position {
+  margin: 22px;
+}
+.position a {
+  color: #7d8389;
+}
+
+@media screen and (max-width: 638px) {
+  .login-section {
+    max-width: 100%;
+    padding: 0;
+    margin-top: 100px;
+  }
+  .login {
+    width: 454px;
+    height: 460px;
+    margin: auto;
+    position: relative;
+    padding-top: 45px;
+    text-align: center !important;
+  }
+  .login-id label {
+    position: absolute;
+    top: 170px;
+    left: 55px;
+    padding: 0.8em 0.5em;
+    color: #263747;
+  }
+
+  .login-id input,
+  .login-pw input {
+    width: 351px;
+    height: 55px;
+    border: solid 2px #b2c1cc;
+    background-color: white;
+    color: black;
+    outline: none;
+    padding-left: 20px;
+    margin: 15px;
+    /* text-align: center; */
+    letter-spacing: 0.625em;
+  }
+
+  .login-pw label {
+    position: absolute;
+    top: 270px;
+    left: 50px;
+    padding: 0.8em 0.5em;
+    color: #263747;
+  }
+
+  .login-btn {
+    width: 351px;
+    height: 64px;
+    border: none;
+    background-color: #007bff;
+    cursor: pointer;
+
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 27px;
+    outline: none;
+    -webkit-appearance: none;
+    padding: 0;
+
+    letter-spacing: 0.0625em;
+  }
 }

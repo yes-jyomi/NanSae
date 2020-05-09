@@ -1,21 +1,46 @@
+a:link {
+  color: white;
+  text-decoration: none;
+}
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .body {
   width: 100%;
   background-color: #78cbd7;
   font-family: "Noto Sans KR", sans-serif;
 }
 
-/* 로그인 이미지  */
-.logo {
-  padding: 10px 410px;
+#topNav {
+  font-size: 1.25em;
+  padding: 35px 45px;
 }
 
-.start {
-  padding-top: 200px;
-  padding: 30px 500px;
+#topNav > a {
+  padding: 20px;
 }
-/* text/일정  */
-.nav-left {
-  list-style-type: none;
-  margin-left: 20px;
-  display: inline-block;
+
+#topNav .left-text {
+  float: left;
+}
+
+#topNav .right-text {
+  float: right;
+}
+
+.login-section {
+  display: block;
+  max-width: 100%;
+  padding: 0;
+  margin-top: 220px;
+}
+
+.login-section .logo {
+  margin-bottom: 30px;
 }

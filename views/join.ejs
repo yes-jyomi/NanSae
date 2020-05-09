@@ -1,57 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
+
     <title>Join</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--메인 CSS-->
     <link rel="stylesheet" href="/stylesheets/join.css" />
 
     <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
     <!--폰트-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+
   </head>
-  <body>
+  <body class="body">
+    <nav id="topNav" class="container-fluid">
+      <a href="javascript:history.back()" class="back text-white">뒤로가기</a>
+      <a href="http://localhost:3000/users/login" class="login text-white">로그인</a>
+    </nav>
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12">
           <!--회원가입페이지-->
           <div class="f">
-            <a href="main.html" class="text-left text-white">뒤로가기</a>
-            <a
-              href="http://localhost:3000/users/login"
-              class="text-right text-white"
-              >로그인</a
-            >
-            <!-- <img src="../imge/box1.png" alt="" class="box1" /> -->
-            <form
-              name="f"
-              method="post"
-              onsubmit="return member_check();"
-              action="/users/join"
-            >
+            <form name="f" method="post" onsubmit="return member_check();" action="/users/join">
 
               <td colspan="3"><b>회원가입</b></td>
               <table border="0" class="table" style="background-color: white">
                 <tr>
                   <td width="80%">아이디</td>
-                  <td width="50%"><input type = "text" placeholder = "아이디를 입력해주세요!" name="id" size="15" /><input type = "button" value = "중복 확인" class = "btn2"</td>
+                  <td width="50%"><input type = "text" placeholder = "아이디를 입력해주세요!" name="id" size="15" /><input type = "button" value = "중복 확인" class = "btn2"></td>
                 </tr>
                 <tr>
                   <td>비밀번호</td>
@@ -75,7 +59,8 @@
                 </tr>
                 <tr>
                   <td>주소</td>
-                  <td><input type="text" id="zipcode" name="zipcode" placeholder="우편번호">
+                  <td>
+                    <input type="text" id="zipcode" name="zipcode" placeholder="우편번호">
                     <input type="button" onclick="zipcode_find()" value="우편번호 찾기"><p></p>
                     <input type="text" id="roadAddress" name="roadAddress" placeholder="도로명주소"><p></p>
                     <span id="guide" style="color:#999;display:none"></span>
@@ -121,7 +106,8 @@
                                 }
                             }).open();
                         }
-                    </script></td>
+                    </script>
+                  </td>
                 </tr>
                 <tr>
                   <td>블로그</td>

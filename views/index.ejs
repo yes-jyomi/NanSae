@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>index</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -25,59 +26,71 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <div class="container-fluid">
+  <body class="body">
+    <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-sm-6">
+        <div class="col">
           <!--메인페이지-->
-          <div class="f">
-            <a
-              class="calendarList text-white col-sm-4"
-              href="/calendar/write"
-              >일정</a
-            >
-            <a
-              class="outdoor text-white col-sm-4"
-              href="/outdoor"
-              >외부활동</a
-            >
-            <a
-              class="graph text-white col-sm-4"
-              href="/graph/score"
-              >그래프</a
-            >
-            <a
-              class="portfolio text-white col-sm-4"
-              href="/portfolio/list"
-              >포트폴리오</a
-            >
-            <a
-              class="mypage text-white col-sm-2"
-              href="/users/mypage"
-              >회원정보</a
-            >
-            <a
-              class="license text-white col-sm-4"
-              href="/license"
-              >자격증</a
-            >
-            <a
-              class="login text-white col-sm-4"
-              href="/users/login"
-              >로그인</a
-            >
-            <a
-              class="join text-white col-sm-4"
-              href="/users/join"
-              >회원가입</a
-            >
-          </div>
-          <img src="./imge/logo.png" alt="" class="logo" />
-          <p>
-            <a href="/users/login">
-              <img src="./imge/start.png" class="start"/>
-            </a>
-          </p>
+          <ul class="nav-left">
+            <li class="nav-calendarList">
+              <a
+                class="calendarList text-white"
+                href="http://localhost:3000/calendar/write"
+                >일정</a
+              >
+            </li>
+            <li class="nav-outdoor">
+              <a
+                class="outdoor text-white"
+                href="http://localhost:3000/outdoor/Update"
+                >외부활동</a
+              >
+            </li>
+            <li class="nav-graph">
+              <a class="graph text-white" href="/calendar/write">그래프</a>
+            </li>
+            <li class="nav-portfolio">
+              <a
+                class="portfolio text-white"
+                href="http://localhost:3000/portfolio/template/write"
+                >포트폴리오</a
+              >
+            </li>
+            <li class="nav-mypage">
+              <a
+                class="mypage text-white"
+                href="http://localhost:3000/users/mypage"
+                >회원정보</a
+              >
+            </li>
+            <li class="nav-license">
+              <a
+                class="license text-white"
+                href="http://localhost:3000/license/Update"
+                >자격증</a
+              >
+            </li>
+          </ul>
+          <ul class="nav-right">
+            <li class="nav-login">
+              <a
+                class="login text-white"
+                href="http://localhost:3000/users/login"
+                >로그인</a
+              >
+            </li>
+            <li class="nav-join">
+              <a class="join text-white" href="http://localhost:3000/users/join"
+                >회원가입</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="./imge/logo.png" class="logo" />
+          <a href="/users/login"
+            ><img src="./imge/start.png" class="start"
+          /></a>
         </div>
       </div>
     </div>

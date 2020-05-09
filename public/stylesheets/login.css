@@ -1,6 +1,15 @@
-a:link { color: white; text-decoration: none; }
-a:visited { color: white; text-decoration: none; }
-a:hover { color: white; text-decoration: none; }
+a:link {
+  color: white;
+  text-decoration: none;
+}
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+  text-decoration: none;
+}
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
@@ -45,7 +54,6 @@ a:hover { color: white; text-decoration: none; }
   position: relative;
   padding-top: 45px;
   text-align: center !important;
-  
 }
 
 .login-title {
@@ -65,7 +73,8 @@ h3 {
   font-family: "Noto Sans KR", sans-serif;
 }
 
-.login-id input, .login-pw input{
+.login-id input,
+.login-pw input {
   width: 381px;
   height: 55px;
   border: solid 2px #082357;
@@ -74,9 +83,8 @@ h3 {
   outline: none;
   padding-left: 20px;
   /* text-align: center; */
-  letter-spacing: .0625em;
- 
-} 
+  letter-spacing: 0.0625em;
+}
 
 .login-btn {
   width: 381px;
@@ -84,7 +92,7 @@ h3 {
   border: 2px solid #082357;
   background-color: rgba(255, 255, 255, 0);
   cursor: pointer;
-  
+
   color: #082357;
   font-size: 20px;
   font-weight: 800;
@@ -93,8 +101,7 @@ h3 {
   -webkit-appearance: none;
   padding: 0;
 
-  letter-spacing: .0625em;
-
+  letter-spacing: 0.0625em;
 }
 .login-btn:hover {
   background-color: #082357;

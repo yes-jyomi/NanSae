@@ -1,81 +1,21 @@
-/* 배경 */
-.row:nth-of-type(1) {
+.body {
+  width: 100%;
   background-color: #78cbd7;
-  padding: 196px 100px;
-}
-
-/* 폰트  */
-.f {
-  font-size: 1.05em;
   font-family: "Noto Sans KR", sans-serif;
 }
 
 /* 로그인 이미지  */
 .logo {
-  position: relative;
-  left: 483px;
-  top: -30px;
+  padding: 10px 410px;
 }
 
-/* start 이미지  */
 .start {
-  position: relative;
-  left: 550px;
-  top: 10px;
+  padding-top: 200px;
+  padding: 30px 500px;
 }
-
 /* text/일정  */
-.calendarList {
-  position: relative;
-  top: -180px;
-  right: 80px;
-}
-
-/* text/외부활동  */
-.outdoor {
-  position: relative;
-  top: -180px;
-  right: 80px;
-}
-
-/* text/그래프  */
-.graph {
-  position: relative;
-  top: -180px;
-  right: 80px;
-}
-
-/* text/포트폴리오  */
-.portfolio {
-  position: relative;
-  top: -180px;
-  right: 80px;
-}
-
-/* text/회원정보  */
-.mypage {
-  position: relative;
-  top: -180px;
-  right: 80px;
-}
-
-/* text/자격증  */
-.license {
-  position: relative;
-  top: -180px;
-  right: 80px;
-}
-
-/* text/로그인  */
-.login {
-  position: relative;
-  top: -180px;
-  right: -630px;
-}
-
-/* text/회원가입  */
-.join {
-  position: relative;
-  top: -206px;
-  right: -1260px;
+.nav-left {
+  list-style-type: none;
+  margin-left: 20px;
+  display: inline-block;
 }

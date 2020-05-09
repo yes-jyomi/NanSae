@@ -1,61 +1,107 @@
-a:link { color: white; text-decoration: none; }
-a:visited { color: white; text-decoration: none; }
-a:hover { color: white; text-decoration: none; }
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: white;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: white;
-}
-
 .body {
   width: 100%;
-  background-color: #78cbd7;
+  background-color: #F5F6F7;
   font-family: "Noto Sans KR", sans-serif;
 }
 
-#topNav {
-  font-size: 1.25em;
-  padding: 35px 45px;
+header {
+  margin: 76px 0 37px;;
 }
 
-#topNav .login {
-  float: right;
+footer {
+  margin: 76px 0 17px;
+  font-size: 14px;
 }
 
+.logo {
+  margin: 20px 0;
 
-
-
-/* 폰트  */
-.f {
-  color: #082357;
-  font-size: 1.05em;
-  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 42px;
+  text-align: center;
+  color: #004DA0;
+}
+.logo:hover {
+  text-decoration-color: #F5F6F7;
 }
 
-/* 완료 버튼  */
-.btn1 {
-  background: transparent;
-  border: none;
+h1, h3 {
+  margin: 0;
 }
 
-/* 버튼  */
-.check1 {
-  position: relative;
-  left: 400px;
+.info {
+  width: 315px;
+  font-size: 15px;
+  color: #263747;
+  text-align: left;
 }
 
-/* 버튼  */
-.table {
-  position: relative;
-  width: 100px;
-  left: 200px;
-  top: -10px;
+.input {
+  padding: 10px;
+
+  font-size: 14px;
+  width: 315px;
+  height: 50px;
+  background: #FFFFFF;
+  border: 1px solid #B2C1CC;
+}
+
+.input-id {
+  padding: 10px;
+
+  width: 189px;
+  height: 50px;
+  background: #FFFFFF;
+  border: 1px solid #B2C1CC;
+}
+
+.button-id {
+  width: 120px;
+  height: 50px;
+  background: #004DA0;
+  border: 1px solid #004DA0;
+
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.input-zipcode {
+  width: 154px;
+  height: 50px;
+  background: #FFFFFF;
+  border: 1px solid #B2C1CC;
+}
+
+.button-zipcode {
+  width: 155px;
+  height: 50px;
+  background: #004DA0;
+  border: 1px solid #004DA0;
+
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.up {
+  margin-top: 20px;
+}
+
+.under {
+  margin-bottom: 5px;
+}
+
+.submit-button {
+  width: 315px;
+  height: 55px;
+  background: #007BFF;
+  border: 1px solid #007BFF;
+
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;;
 }

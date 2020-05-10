@@ -1,96 +1,59 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<html lang="ko">
+<head>
+  <title>난새 - 회원가입</title>
 
-    <!--메인 CSS-->
-    <link rel="stylesheet" href="/stylesheets/licenseList.css" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+  <!--메인 CSS-->
+  <link rel='stylesheet' href='/stylesheets/licenseList.css' />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+</head>
+<body class="body">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="logo" href="http://localhost:3000/">NANSAE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <!--폰트-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:3000/calendar/write">일정</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:3000/outdoor/Update">외부활동</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:3000/license">자격증</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:3000/graph/score">그래프</a>
+        </li><li class="nav-item active">
+          <a class="nav-link" href="http://localhost:3000/portfolio/template/write">포트폴리오</a>
+        </li>
+      </ul>
 
-  <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div clas="col-xs-12">
-          <!--회원정보-->
-          <a class="text-white">회원정보</a
-          ><a class="text-color:#082357">\profile</a>
-
-          <a class="text-white" href="#">로그아웃</a>
-          <p>
-            <a class="text-white" href="http://localhost:3000/calendar/write"
-              >일정</a
-            >
-          </p>
-          <p>
-            <a class="text-white" href="http://localhost:3000/portfolio"
-              >외부활동</a
-            >
-          </p>
-          <p>
-            <a
-              class="text-white"
-              href="http://localhost:3000/portfolio/template"
-              >포트폴리오</a
-            >
-          </p>
-          <p>
-            <a class="text-white" href="http://localhost:3000/graph/score"
-              >그래프</a
-            >
-          </p>
-          <p>
-            <a class="text-white" href="http://localhost:3000/license"
-              >자격증</a
-            >
-          </p>
-          <img src="../imge/box3.png" alt="" class="center-block" />
-          <form>
-            <div class="col-sm-3 input1">
-              <label for="id ">일시</label>
-              <input name="id" value="" id="id" class="form-control" />
-            </div>
-            <div class="col-sm-3 input2">
-              <label for="id ">자격증명</label>
-              <input name="id" value="" id="id" class="form-control" />
-            </div>
-            <div class="col-sm-3 input3">
-              <label for="id ">발행처</label>
-              <input name="id" value="" id="id" class="form-control" />
-            </div>
-            <div class="col-sm-3 input4">
-              <label for="id ">내용</label>
-              <input name="id" value="" id="id" class="form-control" />
-            </div>
-            <div class="col-sm-3 input5">
-              <label for="id ">취득내역서</label>
-              <input name="id" value="" id="id" class="form-control" />
-            </div>
-          </form>
-          <img src="../imge/person.png" alt="" class="center-block" />
-          <a href="http://localhost:3000/license/Update"
-            ><img src="../imge/check1.png" alt="" class="center-block"
-          /></a>
-        </div>
-      </div>
+      <span class="navbar-text">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:3000/users/mypage">회원가입수정</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">로그아웃</a>
+          </li>
+        </ul>
+      </span>
     </div>
-  </body>
+  </nav>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
 </html>

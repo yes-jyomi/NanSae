@@ -19,3 +19,20 @@
 .logo:hover, .logo:focus {
   text-decoration: none;
 }
+
+.link {
+  margin-top: 3px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: #646464;
+
+}
+
+.context {
+  margin-top: 80px;
+}
+
+.add-license {
+  margin-bottom: 10px;
+}

@@ -36,3 +36,12 @@
 .add-license {
   margin-bottom: 10px;
 }
+
+.view {
+  color: #000;
+}
+
+.view:hover, .view:focus {
+  color: #000;
+  text-decoration: none;
+}

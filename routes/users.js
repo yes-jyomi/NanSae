@@ -5,9 +5,11 @@ const conn = mysql_odbc.init();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  if (!req.session.logined)
+  if (req.session.id) {
     res.redirect('/users/mypage');
-  res.redirect('/users/mypage', { user_id: req.session.user_id });
+  } else {
+    res.redirect('/users/login');
+  }
 });
 
 
@@ -92,19 +94,20 @@ router.post('/join', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-  if (!req.session.user_id)
-    res.render('login', { user_id: req.session.user_id });
-  else {
-    console.log('이미 로그인됨');
+  let session = req.session;
 
-    res.render('calendar');
-  }
-
+  res.render('login', {
+    session: session
+  });
 });
 
 router.post('/login', function(req, res, next) {
-  const id = req.body.id;
-  const pwd = req.body.pwd;
+  let body = req.body;
+
+  const id = body.id;
+  const pwd = body.pwd;
+
+  console.log(id + " : " + pwd);
 
   let sql = "SELECT user_id, user_pwd FROM user WHERE user_id = ?";
   conn.query(sql, [id], function(err, rows) {
@@ -123,11 +126,9 @@ router.post('/login', function(req, res, next) {
       console.log('로그인 완료');
 
       // 세션 설정
-      req.session.logined = true;
-      req.session.user_id = user.user_id;
-      req.session.save(function() {
-        return res.render('calendarList', { user_id: req.session.user_id });
-      });
+      req.session.id = id;
+
+      res.redirect('/users/mypage');
     } else {
       console.log('비밀번호가 틀렸습니다.');
       res.redirect('/users/login');
@@ -136,10 +137,12 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/logout', function(req, res, next) {
-  req.session.destroy(function(err) {
-    console.log('로그아웃');
-    res.redirect('/users/login');
-  });
+  req.session.destroy();
+  res.clearCookie('sid');
+
+  res.redirect('/users/login');
 });
 
 module.exports = router;
+
+//TODO crypto 사용하기

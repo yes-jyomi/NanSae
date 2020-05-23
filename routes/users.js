@@ -1,17 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const mysql_odbc = require('../db/db_conn')();
-const conn = mysql_odbc.init();
+const models = require('../models');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  if (req.session.id) {
+  if (req.session.user_id) {
     res.redirect('/users/mypage');
   } else {
     res.redirect('/users/login');
   }
 });
-
 
 function get_data(id, res) {
   const sql = "SELECT user_id, user_pwd, user_name, user_phone, user_email, " +
@@ -24,15 +22,15 @@ function get_data(id, res) {
 }
 
 router.get('/mypage', function(req, res, next) {
-  if (!req.session.logined)
+  if (!req.session.user_id)
     res.render('login');
 
-  const id = req.session.user_id;
-  get_data(id, res);
+  const mypage_id = req.session.user_id;
+  get_data(mypage_id, res);
 });
 
 router.post('/mypage', function(req, res, next) {
-  if (!req.session.logined)
+  if (!req.session.user_id)
     res.redirect('/users/login');
 
   const id = req.session.user_id;
@@ -65,6 +63,27 @@ router.get('/join', function(req, res, next) {
   res.render('join');
 });
 
+router.post('/join/check_email', function (req, res, next) {
+  // TODO: id 값을 못 가져옴 (undefined)
+  const id = req.post('user_id');
+  console.log('id: ' + id);
+  // let user;
+  try {
+    // TODO: models.user -> 다 존재함. models.users -> 다 존재하지 않음 + findOne() 안 됨.
+    var user = models.user.findOne({ where: { user_id: id }});
+  } catch (err) {
+    user = null;
+    console.error('에러 발생: \n' + err);
+  }
+
+  const result = {
+    'result': 'success',
+    'data': !user ? 'not exist' : 'exist'
+  };
+
+  return res.json(result);
+});
+
 router.post('/join', function(req, res, next) {
   const id = req.body.id;
   const pwd = req.body.pwd;
@@ -77,24 +96,32 @@ router.post('/join', function(req, res, next) {
   const address = roadAddress + ", " + detailAddress;
   let blog = req.body.blog;
 
-  console.log('zipcode: ' + zipcode + ', roadAddr: ' + roadAddress + ', detailAddr: ' + detailAddress + 'addr: ' + address);
-
   const empty = (blog) => {
     if (blog === null) blog = "";
   };
 
-  const datas = [id, pwd, name, phone, zipcode, address, email, blog];
-
-  const sql = "INSERT INTO user (user_id, user_pwd, user_name, user_phone, user_zipcode, user_address, user_email, user_blog)" +
-      "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-  conn.query(sql, datas, function(err, rows) {
-    if (err) console.error("err: " + err);
+  models.user.create({
+    user_id: id,
+    user_pwd: pwd,
+    user_name: name,
+    user_phone: phone,
+    user_email: email,
+    user_zipcode: zipcode,
+    user_address: address,
+    user_blog: blog
+  }).then( result => {
+    console.log('회원가입 완료');
     res.redirect('/users/login');
-  });
+  }).catch( err => {
+    console.log('회원가입 실패');
+    console.error(err);
+  })
 });
 
 router.get('/login', function(req, res, next) {
   let session = req.session;
+
+  // undefined
 
   res.render('login', {
     session: session
@@ -126,9 +153,11 @@ router.post('/login', function(req, res, next) {
       console.log('로그인 완료');
 
       // 세션 설정
-      req.session.id = id;
-
-      res.redirect('/users/mypage');
+      // undefined
+      req.session.user_id = id;
+      req.session.save(function() {
+        res.redirect('/users/mypage');
+      });
     } else {
       console.log('비밀번호가 틀렸습니다.');
       res.redirect('/users/login');
@@ -137,10 +166,12 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/logout', function(req, res, next) {
-  req.session.destroy();
+  req.session.destroy(function(err) {});
   res.clearCookie('sid');
 
-  res.redirect('/users/login');
+  req.session.save(function() {
+    res.redirect('/users/login');
+  });
 });
 
 module.exports = router;

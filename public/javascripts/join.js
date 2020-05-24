@@ -39,7 +39,7 @@ $(function () {
         }
         // debugger;
         $.ajax({
-            url: '/users/join/check_email',
+            url: '/users/join/check_id',
             data: {
                 id: id
             },

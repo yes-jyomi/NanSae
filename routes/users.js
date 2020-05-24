@@ -64,7 +64,7 @@ router.get('/join', function(req, res, next) {
   res.render('join');
 });
 
-router.get('/join/check_email', function (req, res, next) {
+router.get('/join/check_id', function (req, res, next) {
   // TODO: id 값을 못 가져옴 (undefined)
   // const id = data.id;
   // console.log('id: ' + id);

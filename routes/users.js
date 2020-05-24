@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const models = require('../models');
+const { User } = require('../models/user');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -63,14 +64,14 @@ router.get('/join', function(req, res, next) {
   res.render('join');
 });
 
-router.post('/join/check_email', function (req, res, next) {
+router.get('/join/check_email', function (req, res, next) {
   // TODO: id 값을 못 가져옴 (undefined)
   const id = req.post('user_id');
   console.log('id: ' + id);
   // let user;
   try {
     // TODO: models.user -> 다 존재함. models.users -> 다 존재하지 않음 + findOne() 안 됨.
-    var user = models.user.findOne({ where: { user_id: id }});
+    var user = User.findOne({ where: { user_id: id }});
   } catch (err) {
     user = null;
     console.error('에러 발생: \n' + err);

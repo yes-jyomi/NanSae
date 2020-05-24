@@ -43,7 +43,7 @@ $(function () {
             data: {
                 user_id: id
             },
-            type: 'post',
+            type: 'get',
             dataType: 'json',
             success: function (response) {
                 if (response.result !== 'success') {

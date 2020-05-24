@@ -41,7 +41,7 @@ $(function () {
         $.ajax({
             url: '/users/join/check_email',
             data: {
-                user_id: id
+                id: id
             },
             type: 'get',
             dataType: 'json',

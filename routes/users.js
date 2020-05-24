@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const models = require('../models');
-const { User } = require('../models/user');
+// const models = require('../models');
+const {User} = require('../models');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -66,23 +66,26 @@ router.get('/join', function(req, res, next) {
 
 router.get('/join/check_email', function (req, res, next) {
   // TODO: id 값을 못 가져옴 (undefined)
-  const id = req.post('user_id');
-  console.log('id: ' + id);
-  // let user;
-  try {
-    // TODO: models.user -> 다 존재함. models.users -> 다 존재하지 않음 + findOne() 안 됨.
-    var user = User.findOne({ where: { user_id: id }});
-  } catch (err) {
-    user = null;
-    console.error('에러 발생: \n' + err);
-  }
+  // const id = data.id;
+  // console.log('id: ' + id);
 
-  const result = {
-    'result': 'success',
-    'data': !user ? 'not exist' : 'exist'
-  };
-
-  return res.json(result);
+  User.findOne({
+    where: { user_id: 'jyomi' }
+  }).then((users) => {
+    console.log(users.get({
+      plain: true
+    }));
+    res.json({
+      result: 'success',
+      data: 'exist'
+    });
+  }).catch(err => {
+    console.error('err: ' + err);
+    res.json({
+      result: 'success',
+      data: 'not exist'
+    });
+  });
 });
 
 router.post('/join', function(req, res, next) {

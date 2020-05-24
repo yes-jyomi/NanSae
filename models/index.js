@@ -35,5 +35,12 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.User = require('./user')(sequelize, Sequelize);
+db.Activity = require('./activity')(sequelize, Sequelize);
+db.Book = require('./book')(sequelize, Sequelize);
+db.Company = require('./company')(sequelize, Sequelize);
+db.Education = require('./education')(sequelize, Sequelize);
+db.Portfolio = require('./portfolio')(sequelize, Sequelize);
+db.Project = require('./project')(sequelize, Sequelize);
+db.Score = require('./score')(sequelize, Sequelize);
 
 module.exports = db;

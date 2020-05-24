@@ -43,7 +43,7 @@ $(function () {
             data: {
                 id: id
             },
-            type: 'get',
+            type: 'post',
             dataType: 'json',
             success: function (response) {
                 if (response.result !== 'success') {
@@ -60,7 +60,7 @@ $(function () {
                     alert("사용 가능한 아이디입니다!");
                     $("#joinBt").attr("id_check_result", "success");
                     $("#joinBt").removeAttr("disabled");
-                    $('#idCk').hide();
+                    // $('#idCk').hide();
                     return;
                 }
                 // console.log(response)

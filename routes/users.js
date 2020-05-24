@@ -64,13 +64,11 @@ router.get('/join', function(req, res, next) {
   res.render('join');
 });
 
-router.get('/join/check_id', function (req, res, next) {
-  // TODO: id 값을 못 가져옴 (undefined)
-  // const id = data.id;
-  // console.log('id: ' + id);
+router.post('/join/check_id', function (req, res, next) {
+  const id = req.body.id;
 
   User.findOne({
-    where: { user_id: 'jyomi' }
+    where: { user_id: id }
   }).then((users) => {
     console.log(users.get({
       plain: true

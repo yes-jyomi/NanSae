@@ -50,15 +50,34 @@ router.post('/mypage', function(req, res, next) {
     if (blog === null) blog = "";
   };
 
-  var datas = [pwd, name, phone, email, zipcode, address, blog, id];
-
-  const sql = "UPDATE user SET user_pwd = ?, user_name = ?, user_phone = ?, user_email = ?, user_zipcode = ?," +
-      " user_address = ?, user_blog = ? WHERE user_id = ?";
-  conn.query(sql, datas, function(err, rows) {
-    if (err)
-      console.error("err: " + err);
+  User.update(
+      {
+        user_pwd: pwd,
+        user_name: name,
+        user_phone: phone,
+        user_email: email,
+        user_zipcode: zipcode,
+        user_address: address,
+        user_blog: blog
+      },
+      {
+        where: {user_id: id}
+      }
+  ).then(() => {
     get_data(id, res);
+  }).catch(err => {
+    console.error('err: ' + err);
   });
+
+  // var datas = [pwd, name, phone, email, zipcode, address, blog, id];
+  //
+  // const sql = "UPDATE user SET user_pwd = ?, user_name = ?, user_phone = ?, user_email = ?, user_zipcode = ?," +
+  //     " user_address = ?, user_blog = ? WHERE user_id = ?";
+  // conn.query(sql, datas, function(err, rows) {
+  //   if (err)
+  //     console.error("err: " + err);
+  //   get_data(id, res);
+  // });
 });
 
 router.get('/join', function(req, res, next) {

@@ -3,13 +3,14 @@ const router = express.Router();
 // const models = require('../models');
 const {User} = require('../models');
 
-/* GET users listing. */
+// TODO: session 연결
 router.get('/', function(req, res, next) {
-  if (req.session.user_id) {
-    res.redirect('/users/mypage');
-  } else {
-    res.redirect('/users/login');
-  }
+  // if (req.session.user_id) {
+  //   res.redirect('/users/mypage');
+  // } else {
+  //   res.redirect('/users/login');
+  // }
+  res.redirect('/users/login');
 });
 
 function get_data(id, res) {
@@ -24,7 +25,7 @@ function get_data(id, res) {
 
 router.get('/mypage', function(req, res, next) {
   if (!req.session.user_id)
-    res.render('login');
+    res.redirect('login');
 
   const mypage_id = req.session.user_id;
   get_data(mypage_id, res);
@@ -64,6 +65,7 @@ router.get('/join', function(req, res, next) {
   res.render('join');
 });
 
+// 아이디 중복 확인 (끝)
 router.post('/join/check_id', function (req, res, next) {
   const id = req.body.id;
 
@@ -86,6 +88,7 @@ router.post('/join/check_id', function (req, res, next) {
   });
 });
 
+// 회원가입 (끝)
 router.post('/join', function(req, res, next) {
   const id = req.body.id;
   const pwd = req.body.pwd;
@@ -102,7 +105,7 @@ router.post('/join', function(req, res, next) {
     if (blog === null) blog = "";
   };
 
-  models.user.create({
+  User.create({
     user_id: id,
     user_pwd: pwd,
     user_name: name,
@@ -117,9 +120,11 @@ router.post('/join', function(req, res, next) {
   }).catch( err => {
     console.log('회원가입 실패');
     console.error(err);
-  })
+    res.redirect('/users/join');
+  });
 });
 
+// 로그인 시 세션 존재하면 mypage 로
 router.get('/login', function(req, res, next) {
   let session = req.session;
 
@@ -130,6 +135,8 @@ router.get('/login', function(req, res, next) {
   });
 });
 
+// 로그인
+// TODO: session 연결
 router.post('/login', function(req, res, next) {
   let body = req.body;
 
@@ -167,6 +174,7 @@ router.post('/login', function(req, res, next) {
   });
 });
 
+// 로그아웃
 router.get('/logout', function(req, res, next) {
   req.session.destroy(function(err) {});
   res.clearCookie('sid');

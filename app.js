@@ -29,6 +29,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  key: 'sid',
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    // 6시간
+    maxAge: 6000 * 60 * 60
+  }
+}));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/calendar', calendarRouter);
@@ -36,16 +47,6 @@ app.use('/outdoor', outdoorRouter);
 app.use('/graph', graphRouter);
 app.use('/portfolio', portfolioRouter);
 app.use('/license', licenseRouter);
-
-app.use(session({
-  key: 'sid',
-  secret: 'secret',
-  resave: false,
-  saveUninitialized: true,
-  cookie: {
-    maxAge: 24000 * 60 * 60
-  }
-}));
 
 models.sequelize.sync().then( () => {
   console.log('DB 연결 성공');

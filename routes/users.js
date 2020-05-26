@@ -145,21 +145,16 @@ router.post('/join', function(req, res, next) {
 
 // 로그인 시 세션 존재하면 mypage 로
 router.get('/login', function(req, res, next) {
-  let session = req.session;
-
-  // undefined
-
-  res.render('login', {
-    session: session
-  });
+  if (req.session)
+    res.render('calendarList');
+  res.render('login');
 });
 
 var save_session = function(req, id) {
   req.session.id = id;
 };
 
-// 로그인
-// TODO: session 연결
+// 로그인 (끝)
 router.post('/login', async function(req, res, next) {
   let body = req.body;
 
@@ -186,71 +181,16 @@ router.post('/login', async function(req, res, next) {
   }).catch(err => {
     console.error('err: ' + err);
   });
-
-
-  // User.findOne({
-  //   where: {user_id: id}
-  // }).then((users) => {
-  //   if (!users) {
-  //     console.log('then: id를 잘못 입력하셨습니다.');
-  //     res.redirect('/users/login');
-  //   }
-  //   const dbPwd = users.user_pwd;
-  //   if (pwd === dbPwd) {
-  //     console.log('로그인 완료되었습니다.');
-  //
-  //   //  TODO: 세션 설정
-  //     req.session.id = id;
-  //     req.session.save(function() {
-  //       res.redirect('/users/mypage');
-  //     });
-  //   } else {
-  //     console.log('비밀번호를 잘못 입력하셨습니다.');
-  //     res.redirect('/users/login');
-  //   }
-  // }).catch(err => {
-  //   console.log('catch: id를 잘못 입력하셨습니다.');
-  //   console.error('err: ' + err);
-  //   res.redirect('/users/login');
-  // });
-
-  // let sql = "SELECT user_id, user_pwd FROM user WHERE user_id = ?";
-  // conn.query(sql, [id], function(err, rows) {
-  //   if (err)
-  //     console.error("err: " + err);
-  //
-  //   if (!rows[0]) {
-  //     console.log('id 를 잘못 입력하셨습니다.');
-  //     res.redirect('/users/login');
-  //   }
-  //
-  //   const user = rows[0];
-  //
-  //   const dbPwd = user.user_pwd;
-  //   if (pwd === dbPwd) {
-  //     console.log('로그인 완료');
-  //
-  //     // 세션 설정
-  //     // undefined
-  //     req.session.user_id = id;
-  //     req.session.save(function() {
-  //       res.redirect('/users/mypage');
-  //     });
-  //   } else {
-  //     console.log('비밀번호가 틀렸습니다.');
-  //     res.redirect('/users/login');
-  //   }
-  // });
 });
 
-// 로그아웃
+// 로그아웃 (끝)
 router.get('/logout', function(req, res, next) {
-  req.session.destroy(function(err) {});
-  res.clearCookie('sid');
-
-  req.session.save(function() {
-    res.redirect('/users/login');
-  });
+  req.logout();
+  // delete req.session.id;
+  //
+  // req.session.destroy(function(err) {});
+  // res.clearCookie('sid');
+  res.redirect('/');
 });
 
 module.exports = router;

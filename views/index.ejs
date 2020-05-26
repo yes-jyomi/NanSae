@@ -32,7 +32,15 @@
 
 
         <a href="/users/join" class="right-text text-white">회원가입</a>
+      <%
+        if (session !== undefined) {
+      %>
+        <a href="/users/logout" class="right-text text-white">로그아웃</a>
+      <%
+      } else {
+      %>
         <a href="/users/login" class="right-text text-white">로그인</a>
+      <% } %>
 
     </nav>
 

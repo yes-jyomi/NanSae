@@ -24,18 +24,18 @@ function get_data(id, res) {
 }
 
 router.get('/mypage', function(req, res, next) {
-  if (!req.session.user_id)
+  if (!req.session.id)
     res.redirect('login');
 
-  const mypage_id = req.session.user_id;
+  const mypage_id = req.session.id;
   get_data(mypage_id, res);
 });
 
 router.post('/mypage', function(req, res, next) {
-  if (!req.session.user_id)
+  if (!req.session.id)
     res.redirect('/users/login');
 
-  const id = req.session.user_id;
+  const id = req.session.id;
   const pwd = req.body.pwd;
   const name = req.body.name;
   const phone = req.body.phone;
@@ -135,43 +135,93 @@ router.get('/login', function(req, res, next) {
   });
 });
 
+var save_session = function(req, id) {
+  req.session.id = id;
+};
+
 // 로그인
 // TODO: session 연결
-router.post('/login', function(req, res, next) {
+router.post('/login', async function(req, res, next) {
   let body = req.body;
 
   const id = body.id;
   const pwd = body.pwd;
 
-  console.log(id + " : " + pwd);
-
-  let sql = "SELECT user_id, user_pwd FROM user WHERE user_id = ?";
-  conn.query(sql, [id], function(err, rows) {
-    if (err)
-      console.error("err: " + err);
-
-    if (!rows[0]) {
-      console.log('id 를 잘못 입력하셨습니다.');
-      res.redirect('/users/login');
+  await User.findOne({
+    where: {
+      user_id: id
     }
+  }).then((user) => {
+    let dbPwd = user.user_pwd;
 
-    const user = rows[0];
+    if (dbPwd === pwd) {
+      save_session(req, id);
+      res.redirect('/users/mypage');
 
-    const dbPwd = user.user_pwd;
-    if (pwd === dbPwd) {
       console.log('로그인 완료');
-
-      // 세션 설정
-      // undefined
-      req.session.user_id = id;
-      req.session.save(function() {
-        res.redirect('/users/mypage');
-      });
     } else {
-      console.log('비밀번호가 틀렸습니다.');
+      console.log('비밀번호 불일치');
       res.redirect('/users/login');
     }
+
+  }).catch(err => {
+    console.error('err: ' + err);
   });
+
+
+  // User.findOne({
+  //   where: {user_id: id}
+  // }).then((users) => {
+  //   if (!users) {
+  //     console.log('then: id를 잘못 입력하셨습니다.');
+  //     res.redirect('/users/login');
+  //   }
+  //   const dbPwd = users.user_pwd;
+  //   if (pwd === dbPwd) {
+  //     console.log('로그인 완료되었습니다.');
+  //
+  //   //  TODO: 세션 설정
+  //     req.session.id = id;
+  //     req.session.save(function() {
+  //       res.redirect('/users/mypage');
+  //     });
+  //   } else {
+  //     console.log('비밀번호를 잘못 입력하셨습니다.');
+  //     res.redirect('/users/login');
+  //   }
+  // }).catch(err => {
+  //   console.log('catch: id를 잘못 입력하셨습니다.');
+  //   console.error('err: ' + err);
+  //   res.redirect('/users/login');
+  // });
+
+  // let sql = "SELECT user_id, user_pwd FROM user WHERE user_id = ?";
+  // conn.query(sql, [id], function(err, rows) {
+  //   if (err)
+  //     console.error("err: " + err);
+  //
+  //   if (!rows[0]) {
+  //     console.log('id 를 잘못 입력하셨습니다.');
+  //     res.redirect('/users/login');
+  //   }
+  //
+  //   const user = rows[0];
+  //
+  //   const dbPwd = user.user_pwd;
+  //   if (pwd === dbPwd) {
+  //     console.log('로그인 완료');
+  //
+  //     // 세션 설정
+  //     // undefined
+  //     req.session.user_id = id;
+  //     req.session.save(function() {
+  //       res.redirect('/users/mypage');
+  //     });
+  //   } else {
+  //     console.log('비밀번호가 틀렸습니다.');
+  //     res.redirect('/users/login');
+  //   }
+  // });
 });
 
 // 로그아웃

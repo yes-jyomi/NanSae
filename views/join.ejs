@@ -17,7 +17,12 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous"
   />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src='/javascripts/join.js'></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 </head>
+
 <body class="body">
   <div class="mx-auto text-center">
     <header>
@@ -26,48 +31,51 @@
       </h1>
     </header>
 
-    <form name="f" method="post" onsubmit="return member_check();" action="/users/join">
+    <form name="joinForm" method="post" onsubmit="sm();" action="/users/join">
       <div class="form-group">
         <div>
           <label for="id" class="info">아이디</label>
         </div>
-        <input type="text" name="id" id="id" class="input-id" maxlength="50">
-        <input type="button" class="button-id" value="중복확인">
+        <input type="text" name="id" id="id" class="input-id" maxlength="50" required>
+        <input type="button" class="button-id" value="중복확인" id="idCk">
+        <img id = "id_check_success" style="display: none;">
       </div>
 
       <div class="form-group">
         <div>
           <label for="pwd" class="info">비밀번호</label>
         </div>
-        <input type="text" name="pwd" id="pwd" class="input" maxlength="50">
+        <input type="text" name="pwd" id="pwd" class="input" maxlength="50" required>
       </div>
 
       <div class="form-group">
         <div>
           <label for="pwd2" class="info">비밀번호 확인</label>
         </div>
-        <input type="text" name="pwd2" id="pwd2" class="input" maxlength="50">
+        <input type="text" name="pwd2" id="pwd2" class="input" maxlength="50" required>
       </div>
+      <div id="alert-success" style="display: none;">비밀번호가 일치합니다.</div>
+      <div id="alert-danger">비밀번호가 일치하지 않습니다.</div>
 
       <div class="form-group">
         <div>
           <label for="name" class="info">이름</label>
         </div>
-        <input type="text" name="name" id="name" class="input" maxlength="50">
+        <input type="text" name="name" id="name" class="input" maxlength="50" required>
       </div>
 
       <div class="form-group">
         <div>
           <label for="phone" class="info">전화번호</label>
         </div>
-        <input type="text" name="phone" id="phone" class="input" maxlength="50">
+        <input type="text" name="phone" id="phone" class="input" maxlength="50" required>
       </div>
 
       <div class="form-group">
         <div>
           <label for="email" class="info">이메일</label>
         </div>
-        <input type="text" name="email" id="email" class="input" maxlength="50">
+        <input type="text" name="email" id="email" class="input" maxlength="50" required>
       </div>
 
       <div class="form-group">
@@ -88,7 +96,7 @@
       </div>
 
       <div class="form-group up">
-        <button type="submit" class="submit-button">회원가입 하기</button>
+        <button type="submit" class="submit-button" id="joinBt" name="joinBt">회원가입 하기</button>
       </div>
     </form>
 

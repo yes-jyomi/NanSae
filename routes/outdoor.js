@@ -6,6 +6,14 @@ router.get('/', function(req, res, next) {
     res.render('outdoorList');
 });
 
+router.get('/add', function(req, res, next) {
+    res.render('outdoorAdd');
+});
+
+router.post('/add', function(req, res, next) {
+
+});
+
 router.get('/write', function(req, res, next) {
     res.render('outdoorWrite');
 });

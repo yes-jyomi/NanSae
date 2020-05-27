@@ -4,7 +4,9 @@ const router = express.Router();
 // const dateFormat = require('dateformat');
 
 router.get('/', function(req, res, next) {
-    res.render('index', { session: req.session });
+    res.render('index', {
+        uid: req.session.uid
+    });
 });
 
 module.exports = router;

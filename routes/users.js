@@ -3,39 +3,46 @@ const router = express.Router();
 // const models = require('../models');
 const {User} = require('../models');
 
-// TODO: session 연결
+// session 존재 -> mypage, session 존재X -> login (끝)
 router.get('/', function(req, res, next) {
-  // if (req.session.user_id) {
-  //   res.redirect('/users/mypage');
-  // } else {
-  //   res.redirect('/users/login');
-  // }
-  res.redirect('/users/login');
+  if (req.session.uid) {
+    res.redirect('/users/login', {
+      uid: req.session.uid
+    });
+  } else {
+    res.redirect('users/mypage/:id', {
+      uid: req.session.uid
+    });
+  }
 });
 
+// user 에 있는 데이터 가져오는 함수
 function get_data(id, res) {
-  const sql = "SELECT user_id, user_pwd, user_name, user_phone, user_email, " +
-      "user_zipcode, user_address, user_blog FROM user WHERE user_id = ?";
-  conn.query(sql, [id], function(err, rows) {
-    if (err)
-      console.error("err: " + err);
-    res.render('mypage', { rows: rows, user_id: id });
+  User.findAll({
+    where: {user_id: id}
+  }).then((result) => {
+    res.render('mypage/:id', { rows: result, user_id: id});
+  }).catch(err => {
+    console.error('err: ' + err);
   });
 }
 
-router.get('/mypage', function(req, res, next) {
-  if (!req.session.id)
-    res.redirect('login');
+// 마이페이지: 세션X -> login, 세션O -> 정보 가져옴
+router.get('/mypage/:id', function(req, res, next) {
+  if (!req.session.uid)
+    res.redirect('/users/login');
 
-  const mypage_id = req.session.id;
+  var id = req.params.id;
+
+  const mypage_id = req.session.uid;
   get_data(mypage_id, res);
 });
 
 router.post('/mypage', function(req, res, next) {
-  if (!req.session.id)
+  if (!req.session.uid)
     res.redirect('/users/login');
 
-  const id = req.session.id;
+  const id = req.session.uid;
   const pwd = req.body.pwd;
   const name = req.body.name;
   const phone = req.body.phone;
@@ -80,6 +87,7 @@ router.post('/mypage', function(req, res, next) {
   // });
 });
 
+// (끝)
 router.get('/join', function(req, res, next) {
   res.render('join');
 });
@@ -106,6 +114,8 @@ router.post('/join/check_id', function (req, res, next) {
     });
   });
 });
+
+//TODO: crypto 사용하기
 
 // 회원가입 (끝)
 router.post('/join', function(req, res, next) {
@@ -134,24 +144,26 @@ router.post('/join', function(req, res, next) {
     user_address: address,
     user_blog: blog
   }).then( result => {
-    console.log('회원가입 완료');
+    alert(id + '님, 회원가입이 완료되었습니다.');
     res.redirect('/users/login');
   }).catch( err => {
-    console.log('회원가입 실패');
+    alert('회원가입이 실패하였습니다.');
     console.error(err);
     res.redirect('/users/join');
   });
 });
 
-// 로그인 시 세션 존재하면 mypage 로
+// 로그인 시 세션O -> index, 세션X -> login
 router.get('/login', function(req, res, next) {
-  if (req.session)
-    res.render('calendarList');
+  if (req.session.uid)
+    res.render('index');
   res.render('login');
 });
 
+// 로그인 시 세션 저장하는 함수 (끝)
 var save_session = function(req, id) {
-  req.session.id = id;
+  req.session.uid = id;
+  console.log('세션에 저장');
 };
 
 // 로그인 (끝)
@@ -170,7 +182,7 @@ router.post('/login', async function(req, res, next) {
 
     if (dbPwd === pwd) {
       save_session(req, id);
-      res.redirect('/users/mypage');
+      res.redirect('/users/mypage/' + id);
 
       console.log('로그인 완료');
     } else {
@@ -185,14 +197,27 @@ router.post('/login', async function(req, res, next) {
 
 // 로그아웃 (끝)
 router.get('/logout', function(req, res, next) {
-  req.logout();
+  if (req.session.uid) {
+    console.log('세션이 있음')
+    req.session.destroy(function(err) {
+      console.log('세션 부숨');
+      if (err) {
+        console.error('err: ' + err);
+        console.log('에러 발생함');
+      } else {
+        console.log('에러 안 발생함');
+        res.redirect('/');
+      }
+    });
+  } else {
+    res.redirect('/');
+  }
+  // req.logout();
   // delete req.session.id;
   //
   // req.session.destroy(function(err) {});
   // res.clearCookie('sid');
-  res.redirect('/');
+  // res.redirect('/');
 });
 
 module.exports = router;
-
-//TODO crypto 사용하기

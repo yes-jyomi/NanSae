@@ -36,10 +36,14 @@
       <a href="/users/mypage" class="left-text text-white">회원정보</a>
 
       <a href="/users/join" class="right-text text-white">회원가입</a>
-      <% if (session !== undefined) { %>
-      <a href="/users/logout" class="right-text text-white">로그아웃</a>
-      <% } else { %>
+      <%
+        if (uid == undefined || uid == null) {
+      %>
       <a href="/users/login" class="right-text text-white">로그인</a>
+      <%
+        } else {
+      %>
+      <a href="/users/logout" class="right-text text-white">로그아웃</a>
       <% } %>
     </nav>
 

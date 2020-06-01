@@ -15,6 +15,7 @@ const outdoorRouter = require('./routes/outdoor');
 const graphRouter = require('./routes/graph');
 const portfolioRouter = require('./routes/portfolio');
 const licenseRouter = require('./routes/license');
+const projectRouter = require('./routes/project');
 
 const app = express();
 
@@ -50,6 +51,7 @@ app.use('/outdoor', outdoorRouter);
 app.use('/graph', graphRouter);
 app.use('/portfolio', portfolioRouter);
 app.use('/license', licenseRouter);
+app.use('/project', projectRouter);
 
 models.sequelize.sync().then( () => {
   console.log('DB 연결 성공');

@@ -27,6 +27,13 @@ function get_data(id, res) {
   });
 }
 
+router.get('/mypage', function(req, res, next) {
+  if (req.session.uId)
+    res.redirect('/users/mypage/:id');
+  else
+    res.redirect('/users/login');
+})
+
 // 마이페이지: 세션X -> login, 세션O -> 정보 가져옴
 router.get('/mypage/:id', function(req, res, next) {
   if (!req.session.uid)

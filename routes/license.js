@@ -26,8 +26,4 @@ router.get('/view', function(req, res, next) {
     res.render('licenseView');
 });
 
-router.post('/update', function(req, res, next) {
-
-});
-
 module. exports = router;

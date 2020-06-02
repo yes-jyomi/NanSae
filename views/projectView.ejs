@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--메인 CSS-->
-    <link rel='stylesheet' href='/stylesheets/projectAdd.css' />
+    <link rel='stylesheet' href='/stylesheets/projectView.css' />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
@@ -61,23 +61,24 @@
 
 <div class="context container">
 
-    <form method="post" action="/project">
+    <form method="post" action="/project/update">
 
         <div class="page-header">
             <label for="project_name" class="info">프로젝트명</label>
-            <input class="input-box add-license input-lg" type="text" name="project_name" id="project_name"/>
+            <input class="input-box add-license input-lg" type="text" name="project_name" id="project_name" readonly/>
 
             <label for="use_language" class="info">사용 언어</label>
-            <input class="input-box add-license input-lg" type="text" name="use_language" id="use_language"/>
+            <input class="input-box add-license input-lg" type="text" name="use_language" id="use_language" readonly/>
 
             <label for="project_context" class="info">프로젝트 내용</label>
-            <textarea class="textarea-box add-license" rows="5" name="project_context" id="project_context"></textarea>
+            <textarea class="textarea-box add-license" rows="5" name="project_context" id="project_context" readonly></textarea>
 
             여기서 이미지를 몇장이든 추가하게 해야하는데 어카지
         </div>
 
         <div class="add-button">
-            <button type="submit" class="add-license btn btn-default btn-primary">프로젝트 추가</button>
+            <button type="submit" class="add-license btn btn-default btn-primary">수정하기</button>
+            <button type="button" class="add-license btn btn-default btn-danger" onClick="javacript:location.href='/project'">삭제하기</button>
         </div>
     </form>
 

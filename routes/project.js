@@ -15,7 +15,7 @@ router.post('/add', function(req, res, next) {
 });
 
 router.get('/update', function(req, res, next) {
-    res.render('projectUpdate');
+    res.render('projectUpdates');
 });
 
 router.post('/update', function(req, res, next) {

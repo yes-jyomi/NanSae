@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>난새 - 프로젝트</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--메인 CSS-->
+    <link rel='stylesheet' href='/stylesheets/projectList.css' />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <!--폰트-->
+    <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap"
+            rel="stylesheet"
+    />
+
+
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $( document ).ready( function() {
+            var cardWidth = $( '.card' ).width();
+            var cardHeight = $( '.card' ).height();
+
+            $( '.card-add' ).width( cardWidth );
+            $( '.card-add' ).height( cardHeight );
+
+        } );
+        $( window ).resize( function() {
+            var cardWidth = $( '.card' ).width();
+            var cardHeight = $( '.card' ).height();
+
+            $( '.card-add' ).width( cardWidth );
+            $( '.card-add' ).height( cardHeight );
+
+        } );
+    </script>
+</head>
+<body class="body">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="logo" href="/">NANSAE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="link nav-link" href="/calendar">일정</a>
+            </li>
+            <li class="nav-item">
+                <a class="link nav-link" href= "/outdoor">외부활동</a>
+            </li>
+            <li class="nav-item">
+                <a class="link nav-link" href= "/license">자격증</a>
+            </li>
+            <li class="nav-item">
+                <a class="link nav-link" href= "/project">프로젝트</a>
+            </li><li class="nav-item">
+                <a class="link nav-link" href= "/portfolio">포트폴리오</a>
+            </li>
+        </ul>
+
+        <span class="navbar-text">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="link nav-link" href= "/users/mypage">회원가입수정</a>
+          </li>
+          <li class="nav-item">
+            <a class="link nav-link" href="/users/logout">로그아웃</a>
+          </li>
+        </ul>
+      </span>
+    </div>
+</nav>
+
+<div class="context container">
+
+    <div class="row">
+        <div class="single-card col-lg-4">
+            <a href="#">
+                <div class="card">
+                    <div class="thumbnail-wrapper">
+                        <img class="card-img-top" src="https://mblogthumb-phinf.pstatic.net/MjAxNzAzMThfMTU4/MDAxNDg5ODM2Njg3MTE5.onC88ZW1tO95OqXzh2leWG1juX-o3EeYmyDAMdP568sg.gOTTU8M0ug5jwKn4rxnXMMWddklKfNxtykdZ605iuXkg.JPEG.star7sss/%EC%84%9C%EB%93%A0%EC%96%B4%ED%83%9D.jpg?type=w800">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">쿠키런</h4>
+                        <p class="card-text">쿠키런 설명을 여기다가 적으면 됩니다. 그러면 간단한 설명이 여기 보입니다.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="single-card col-lg-4">
+            <a href="#">
+                <div class="card">
+                    <div class="thumbnail-wrapper">
+                        <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/luwK_lzWUPs4sjWhQT9YnBNFw4g4YjVJNknDR6mfAirxdjji-dEMcIb0zz7po2UhiFz23JcmNmmFo3wp23XXDHIAFG9zdp3dr695">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">쿠키런</h4>
+                        <p class="card-text">쿠키런 설명을 여기다가 적으면 됩니다. 그러면 간단한 설명이 여기 보입니다.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="single-card col-lg-4">
+            <a href="#">
+                <div class="card">
+                    <div class="thumbnail-wrapper">
+                        <img class="card-img-top" src="https://mblogthumb-phinf.pstatic.net/MjAxNzAzMThfMTU4/MDAxNDg5ODM2Njg3MTE5.onC88ZW1tO95OqXzh2leWG1juX-o3EeYmyDAMdP568sg.gOTTU8M0ug5jwKn4rxnXMMWddklKfNxtykdZ605iuXkg.JPEG.star7sss/%EC%84%9C%EB%93%A0%EC%96%B4%ED%83%9D.jpg?type=w800">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">쿠키런</h4>
+                        <p class="card-text">쿠키런 설명을 여기다가 적으면 됩니다. 그러면 간단한 설명이 여기 보입니다.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="single-card col-lg-4">
+            <a href="/project/add">
+                <div class="card-add" style="background: red;">
+                    추가버튼입니당 나중에 이미지 넣고 처리함.
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

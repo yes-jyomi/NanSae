@@ -1,60 +1,60 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <title>Login</title>
+<head>
+  <title>Login</title>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
 
-    <!--메인 CSS-->
-    <link rel="stylesheet" href="/stylesheets/login.css" />
+  <!--메인 CSS-->
+  <link rel="stylesheet" href="/stylesheets/login.css" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
-    />
-    <!--폰트-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="body">
-    <div class="mx-auto text-center login-section">
-      <div class="login">
-        <div class="login-title">NANSAE</div>
+  <!-- Bootstrap CSS -->
+  <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+  />
+  <!--폰트-->
+  <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap"
+          rel="stylesheet"
+  />
+</head>
+<body class="body">
+<div class="mx-auto text-center login-section">
+  <div class="login">
+    <div class="login-title">NANSAE</div>
 
 
-        <div class="login-form">
-          <form name="f" method="post" action="/users/login">
-            <div class="login-id">
-              <label for="Id">아이디</label>
-              <input type="text" id="id" name="id" placeholder="아이디" />
-            </div>
-            <div class="login-pw">
-              <label for="Password">비밀번호</label>
-              <input
-                type="password"
-                id="pwd"
-                name="pwd"
-                placeholder="비밀번호"
-              />
-            </div>
-            <button type="submit" class="login-btn">로그인</button>
-          </form>
+    <div class="login-form">
+      <form name="f" method="post" action="/users/login">
+        <div class="login-id">
+          <label for="Id">아이디</label>
+          <input type="text" id="id" name="id" placeholder="아이디" />
         </div>
-
-
-        <div class="position">
-          <a>아직 계정이 없으신가요?</a>
-          <a id="a" href="/users/join">회원가입</a>
+        <div class="login-pw">
+          <label for="Password">비밀번호</label>
+          <input
+                  type="password"
+                  id="pwd"
+                  name="pwd"
+                  placeholder="비밀번호"
+          />
         </div>
-      </div>
+        <button type="submit" class="login-btn">로그인</button>
+      </form>
     </div>
-  </body>
+
+
+    <div class="position">
+      <a>아직 계정이 없으신가요?</a>
+      <a id="a" href="/users/join">회원가입</a>
+    </div>
+  </div>
+</div>
+</body>
 </html>

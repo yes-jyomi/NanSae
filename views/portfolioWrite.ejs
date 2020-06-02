@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <title>난새 - 포트폴리오</title>
+  <title>난새 - 자격증</title>
 
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!--메인 CSS-->
-  <link rel='stylesheet' href='/stylesheets/portfolioWrite.css' />
-
+  <link rel='stylesheet' href='/stylesheets/licenseList.css' />
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
@@ -17,53 +16,76 @@
 </head>
 <body class="body">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="logo" href="http://localhost:3000/"><img src = "/imge/BLogo.png" width = "79px" height = "36px"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="logo" href="/"><img src = "/imge/BLogo.png" width = "79px" height = "36px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="link nav-link" href="http://localhost:3000/calendar/write">일정</a>
+        <a class="link nav-link" href="/calendar">일정</a>
       </li>
       <li class="nav-item">
-        <a class="link nav-link" href="http://localhost:3000/outdoor/Update">외부활동</a>
+        <a class="link nav-link" href= "/outdoor">외부활동</a>
       </li>
       <li class="nav-item">
-        <a class="link nav-link" href="http://localhost:3000/license">자격증</a>
+        <a class="link nav-link" href= "/license">자격증</a>
       </li>
       <li class="nav-item">
-        <a class="link nav-link" href="http://localhost:3000/graph/score">그래프</a>
+        <a class="link nav-link" href= "/graph/score">그래프</a>
       </li><li class="nav-item">
-        <a class="link nav-link" href="http://localhost:3000/portfolio/template/write">포트폴리오</a>
+        <a class="link nav-link" href= "/portfolio">포트폴리오</a>
       </li>
     </ul>
 
     <span class="navbar-text">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
-            <a class="link nav-link" href="http://localhost:3000/users/mypage">회원가입수정</a>
+            <a class="link nav-link" href= "/users/mypage">회원가입수정</a>
           </li>
           <li class="nav-item">
-            <a class="link nav-link" href="#">로그아웃</a>
+            <a class="link nav-link" href="/users/logout">로그아웃</a>
           </li>
         </ul>
       </span>
   </div>
 </nav>
 
-<div class="container-fluid"></div>
-
-<div class = "container tx1">
-  <h3><b>홍길동</b></h3>
+<div class="context container">
+  <div class="float-right">
+    <!-- action으로 폼 먹여서 할라했는데 되지 않아서 걍 a 태그 넣음 -->
+    <form method="post">
+      <a href= "/license/add">
+        <button type="button" class="add-license btn btn-default btn-primary">자격증 추가</button>
+      </a>
+    </form>
+  </div>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>번호</th>
+      <th>자격증명</th>
+      <th>날짜</th>
+      <th>발행처</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- 만약 자격증이 없다면 -->
+    <tr>
+      <td class="text-center" colspan="4">등록된 자격증이 없습니다.</td>
+    </tr>
+    <!-- 자격증이 있다면 -->
+    <tr>
+      <td>165</td>
+      <td><a class="view" href="license/view">ITQ 한글</a></td>
+      <td>2016.12.02</td>
+      <td>한국생산성본부</td>
+    </tr>
+    </tbody>
+  </table>
 </div>
-
-<div id = "profile"></div>
-
-<div class = "container span">
-  <span class="rounded-circle"></span>
-<</div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

@@ -1,116 +1,116 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
 
-    <!--메인 CSS-->
-    <link rel="stylesheet" href="/stylesheets/mypage.css" />
+  <!--메인 CSS-->
+  <link rel="stylesheet" href="/stylesheets/mypage.css" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+  <!-- Bootstrap CSS -->
+  <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous"
+  />
 
-    <!--폰트-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div clas="col-xs-12">
-          <!--회원정보-->
-          <a class="text-white">회원정보</a>
-          <a class="text-color:#082357">\profile</a>
+  <!--폰트-->
+  <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap"
+          rel="stylesheet"
+  />
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div clas="col-xs-12">
+      <!--회원정보-->
+      <a class="text-white">회원정보</a>
+      <a class="text-color:#082357">\profile</a>
 
-          <a class="text-white" href="/users/logout">로그아웃</a>
-          <p>
-            <a class="text-white" href= "/calendar">일정</a>
-          </p>
-          <p>
-            <a class="text-white" href= "/outdoor">외부활동</a>
-          </p>
-          <p>
-            <a class="text-white" href= "/portfolio">포트폴리오</a>
-          </p>
-          <p>
-            <a class="text-white" href= "/graph/score">그래프</a>
-          </p>
-          <p>
-            <a class="text-white" href= "/license">자격증</a>
-          </p>
-          <img src="../imge/box3.png" alt="" class="center-block" />
-          <form name="f" method="post" action="/users/mypage">
-            <table border="1" width="600">
-              <tr>
-                <td colspan="3"><b>회원가입 수정</b></td>
-              </tr>
+      <a class="text-white" href="/users/logout">로그아웃</a>
+      <p>
+        <a class="text-white" href= "/calendar">일정</a>
+      </p>
+      <p>
+        <a class="text-white" href= "/outdoor">외부활동</a>
+      </p>
+      <p>
+        <a class="text-white" href= "/portfolio">포트폴리오</a>
+      </p>
+      <p>
+        <a class="text-white" href= "/graph/score">그래프</a>
+      </p>
+      <p>
+        <a class="text-white" href= "/license">자격증</a>
+      </p>
+      <img src="../imge/box3.png" alt="" class="center-block" />
+      <form name="f" method="post" action="/users/mypage">
+        <table border="1" width="600">
+          <tr>
+            <td colspan="3"><b>회원가입 수정</b></td>
+          </tr>
 
-              <%
-                for (var i = 0; i < rows.length; i++) {
-                  var data = rows[i];
-                  var id = data.user_id;
-                  var pwd = data.user_pwd;
-                  var name = data.user_name;
-                  var phone = data.user_phone;
-                  var email = data.user_email;
-                  var zipcode = data.user_zipcode;
-                  var address = data.user_address;
-                  var blog = data.user_blog;
-                }
-              %>
+          <%
+          for (var i = 0; i < rows.length; i++) {
+            var data = rows[i];
+            var id = data.user_id;
+            var pwd = data.user_pwd;
+            var name = data.user_name;
+            var phone = data.user_phone;
+            var email = data.user_email;
+            var zipcode = data.user_zipcode;
+            var address = data.user_address;
+            var blog = data.user_blog;
+          }
+          %>
 
-              <tr>
-                <td width="20%">아이디</td>
-                <td width="50%"><input name="id" size="15" value="<%= id %>" readonly/></td>
-              </tr>
+          <tr>
+            <td width="20%">아이디</td>
+            <td width="50%"><input name="id" size="15" value="<%= id %>" readonly/></td>
+          </tr>
 
-              <tr>
-                <td>비밀번호</td>
-                <td><input type="password" name="pwd" size="15" value="<%= pwd %>"/></td>
-              </tr>
-              <tr>
-                <td>이름</td>
-                <td><input name="name" size="15" value="<%= name %>" /></td>
-              </tr>
-              <tr>
-                <td>전화번호</td>
-                <td><input name="phone" size="12" value="<%= phone %>" /></td>
-              </tr>
-              <tr>
-                <td>Email</td>
-                <td><input name="email" size="30" value="<%= email %>" /></td>
-              </tr>
-              <tr>
-                <td>우편번호</td>
-                <td><input name="zipcode" size="5" value="<%= zipcode %>" /></td>
-              </tr>
-              <tr>
-                <td>주소</td>
-                <td><input name="address" size="45" value="<%= address %>" /></td>
-              </tr>
-              <tr>
-                <td>블로그</td>
-                <td><input type="text" name="blog" value="<%= blog %>" /></td>
-              </tr>
-            </table>
-            <img src="../imge/person.png" alt="" class="center-block" />
-            <button type="submit" style="background: transparent; border: none;">
-              <img src="../imge/modify.png" alt="" class="center-block" />
-            </button>
-          </form>
-        </div>
-      </div>
+          <tr>
+            <td>비밀번호</td>
+            <td><input type="password" name="pwd" size="15" value="<%= pwd %>"/></td>
+          </tr>
+          <tr>
+            <td>이름</td>
+            <td><input name="name" size="15" value="<%= name %>" /></td>
+          </tr>
+          <tr>
+            <td>전화번호</td>
+            <td><input name="phone" size="12" value="<%= phone %>" /></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><input name="email" size="30" value="<%= email %>" /></td>
+          </tr>
+          <tr>
+            <td>우편번호</td>
+            <td><input name="zipcode" size="5" value="<%= zipcode %>" /></td>
+          </tr>
+          <tr>
+            <td>주소</td>
+            <td><input name="address" size="45" value="<%= address %>" /></td>
+          </tr>
+          <tr>
+            <td>블로그</td>
+            <td><input type="text" name="blog" value="<%= blog %>" /></td>
+          </tr>
+        </table>
+        <img src="../imge/person.png" alt="" class="center-block" />
+        <button type="submit" style="background: transparent; border: none;">
+          <img src="../imge/modify.png" alt="" class="center-block" />
+        </button>
+      </form>
     </div>
-  </body>
+  </div>
+</div>
+</body>
 </html>

@@ -1,173 +1,173 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <title>난새 - 일정</title>
+<head>
+  <title>난새 - 일정</title>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
 
-    <!--메인 CSS-->
-    <link rel="stylesheet" href="/stylesheets/calendarList.css" />
-    <!-- Bootstrap CSS -->
+  <!--메인 CSS-->
+  <link rel="stylesheet" href="/stylesheets/calendarList.css" />
+  <!-- Bootstrap CSS -->
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
-    />
-  </head>
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button
-            type="button"
-            class="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-text" href="/">NANSAE</a>
-        </div>
+  <!-- Bootstrap CSS -->
+  <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+  />
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-text" href="/">NANSAE</a>
+    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="nav-list" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="navbar-left">
-              <a href="/calendar">일정</a>
-            </li>
-            <li><a href="/outdoor">외부할동</a></li>
-            <li><a href="/license">자격증</a></li>
-            <li><a href="/graph/score">그래프</a></li>
-            <li><a href="/portfolio">포트폴리오</a></li>
-          </ul>
-            <div class="navbar-right">
-              <ul class="nav navbar-nav">
-                <li class="navbar-rigth">
-                  <a href="/users/login">로그인</a>
-                </li>
-                <li><a href="/users/join">회원가입</a></li>
-              </ul>
-            </div>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
-    </nav>
-
-    <div class="calendar-wrap">
-      <h2>Calendar</h2>
-      <div class="daily">
-        <p class="day"></p>
-        <p class="date"></p>
-      </div>
-  
-      <div class="calendar">
-        <div class="month-control">
-          <button class="prev-button button">Previous</button>
-          <span class="month"></span>
-          <button class="next-button button">Next</button>
-        </div>
-  
-        <table class="calendar-tbl">
-          <caption>Calendar</caption>
-          <thead>
-            <tr>
-              <th>S</th>
-              <th>M</th>
-              <th>T</th>
-              <th>W</th>
-              <th>T</th>
-              <th>F</th>
-              <th>S</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-  
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="nav-list" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="navbar-left">
+          <a href="/calendar">일정</a>
+        </li>
+        <li><a href="/outdoor">외부할동</a></li>
+        <li><a href="/license">자격증</a></li>
+        <li><a href="/graph/score">그래프</a></li>
+        <li><a href="/portfolio">포트폴리오</a></li>
+      </ul>
+      <div class="navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="navbar-rigth">
+            <a href="/users/login">로그인</a>
+          </li>
+          <li><a href="/users/join">회원가입</a></li>
+        </ul>
       </div>
     </div>
-  
-    <div class="todo-wrap">
-      <div class="todolist">
-        <h2>Todo List</h2>
-      </div>
-      <div class="todo">
-        <div class="add-wrap">
-          <input type="checkbox" id="check-all" class="check-all">
-          <label for="check-all"></label>
-          <input type="text" class="add-input" placeholder="Todo List?">
-        </div>
-  
-        <div class="todo-list-wrap">
-          <ul class="todo-list">
-          </ul>
-        </div>
-  
-        <div class="todo-tab">
-          <span class="count">0 items left</span>
-          <ul class="tab-list">
-            <li><a href="#All" class="all on" data-type="all">All</a></li>
-            <li><a href="#Active" class="active" data-type="active">Active</a></li>
-            <li><a href="#Completed" class="completed" data-type="completed">Completed</a></li>
-          </ul>
-          <a href="#" class="clear">Clear completed</a>
-        </div>
-  
-      </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<div class="calendar-wrap">
+  <h2>Calendar</h2>
+  <div class="daily">
+    <p class="day"></p>
+    <p class="date"></p>
+  </div>
+
+  <div class="calendar">
+    <div class="month-control">
+      <button class="prev-button button">Previous</button>
+      <span class="month"></span>
+      <button class="next-button button">Next</button>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
-    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script>
-      function Todo({ todosSelector, calenderTableSelector = null, hasCalender = false}) {
-  this.$todos = document.querySelector(todosSelector);
-  this.$calenderTable = document.querySelector(calenderTableSelector);
-  this.hasCalender = hasCalender;
-  this.tabState = 'all';
 
-  this.addNewTodo();
-  this.checkAll();
-  this.tab();
-  this.clearCompleted();
-}
+    <table class="calendar-tbl">
+      <caption>Calendar</caption>
+      <thead>
+      <tr>
+        <th>S</th>
+        <th>M</th>
+        <th>T</th>
+        <th>W</th>
+        <th>T</th>
+        <th>F</th>
+        <th>S</th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
 
-Todo.prototype.initEvent = function () {
-  this.setNumberOfItemsLeft();
-  this.handleCheckboxToggle();
-  this.editTodo();
-  this.deleteTodo();
-};
+  </div>
+</div>
 
-Todo.prototype.addNewTodo = function () {
-  const $newTodoInput = this.$todos.querySelector('.add-input');
+<div class="todo-wrap">
+  <div class="todolist">
+    <h2>Todo List</h2>
+  </div>
+  <div class="todo">
+    <div class="add-wrap">
+      <input type="checkbox" id="check-all" class="check-all">
+      <label for="check-all"></label>
+      <input type="text" class="add-input" placeholder="Todo List?">
+    </div>
 
-  $newTodoInput.addEventListener('keydown', ev => {
-    if (ev.key === 'Enter') {
-      if (!$newTodoInput.value) return alert('쒸익쒸익 내용을 입력해 주세요~');
+    <div class="todo-list-wrap">
+      <ul class="todo-list">
+      </ul>
+    </div>
 
-      const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
-      const $list = this.$todos.querySelector('.todo-list');
-      const totalAmountOfList = this.$todos.querySelectorAll('.todo-list li').length;
-      let checkedArray = [];
+    <div class="todo-tab">
+      <span class="count">0 items left</span>
+      <ul class="tab-list">
+        <li><a href="#All" class="all on" data-type="all">All</a></li>
+        <li><a href="#Active" class="active" data-type="active">Active</a></li>
+        <li><a href="#Completed" class="completed" data-type="completed">Completed</a></li>
+      </ul>
+      <a href="#" class="clear">Clear completed</a>
+    </div>
 
-      $checkboxes.forEach((checkbox, index) => {
-        if (checkbox.checked) checkedArray.push(index);
-      });
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script>
+  function Todo({ todosSelector, calenderTableSelector = null, hasCalender = false}) {
+    this.$todos = document.querySelector(todosSelector);
+    this.$calenderTable = document.querySelector(calenderTableSelector);
+    this.hasCalender = hasCalender;
+    this.tabState = 'all';
 
-      $list.innerHTML += `
+    this.addNewTodo();
+    this.checkAll();
+    this.tab();
+    this.clearCompleted();
+  }
+
+  Todo.prototype.initEvent = function () {
+    this.setNumberOfItemsLeft();
+    this.handleCheckboxToggle();
+    this.editTodo();
+    this.deleteTodo();
+  };
+
+  Todo.prototype.addNewTodo = function () {
+    const $newTodoInput = this.$todos.querySelector('.add-input');
+
+    $newTodoInput.addEventListener('keydown', ev => {
+      if (ev.key === 'Enter') {
+        if (!$newTodoInput.value) return alert('쒸익쒸익 내용을 입력해 주세요~');
+
+        const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
+        const $list = this.$todos.querySelector('.todo-list');
+        const totalAmountOfList = this.$todos.querySelectorAll('.todo-list li').length;
+        let checkedArray = [];
+
+        $checkboxes.forEach((checkbox, index) => {
+          if (checkbox.checked) checkedArray.push(index);
+        });
+
+        $list.innerHTML += `
         <li>
           <input type="checkbox" id="check-todo${totalAmountOfList}" class="check-todo">
           <label for="check-todo${totalAmountOfList}"></label>
@@ -177,447 +177,447 @@ Todo.prototype.addNewTodo = function () {
         </li>
       `;
 
-      $newTodoInput.value = '';
+        $newTodoInput.value = '';
 
-      this.backupCheckbox(checkedArray);
-      this.initEvent();
-      this.sortList();
-    }
-  });
-};
-
-Todo.prototype.backupCheckbox = function (checkedArray) {
-  const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
-
-  for (const i of checkedArray) {
-    $checkboxes[i].checked = true;
-  }
-
-  checkedArray = [];
-};
-
-Todo.prototype.setNumberOfItemsLeft = function () {
-  const $tab = this.$todos.querySelector('.todo-tab');
-  const $count = $tab.querySelector('.count');
-  const $clear = $tab.querySelector('.clear');
-  const $todoList = this.$todos.querySelector('.todo-list');
-  const $checkboxes = $todoList.querySelectorAll('.check-todo');
-  const $checkAll = this.$todos.querySelector('.check-all');
-  const totalAmountOfList = $todoList.querySelectorAll('li').length;
-  let countItemsLeft = totalAmountOfList;
-
-  $checkboxes.forEach(checkbox => {
-    if (checkbox.checked) countItemsLeft--;
-  });
-
-  if (!countItemsLeft) {
-    $count.textContent = '0 item left';
-
-    if (!totalAmountOfList) { 
-      $tab.classList.remove('on');
-      $clear.classList.remove('on');
-      $checkAll.checked = false;
-
-    } else { 
-      $tab.classList.add('on');
-      $clear.classList.add('on');
-      $checkAll.checked = true;
-    }
-
-  } else {
-    $count.textContent = `${countItemsLeft} ${countItemsLeft === 1 ? 'item' : 'items'} left`;
-    $tab.classList.add('on');
-    $checkAll.checked = false;
-
-    if (countItemsLeft !== totalAmountOfList) {
-      $clear.classList.add('on');
-    } else {
-      $clear.classList.remove('on');
-    }
-  }
-
-  if (this.hasCalender) this.daysAddDot(totalAmountOfList);
-};
-
-Todo.prototype.daysAddDot = function (totalAmountOfList) {
-  const $days = this.$calenderTable.querySelectorAll('tbody td');
-
-  $days.forEach(day => {
-    const clickDate = day.children[0].classList.contains('on');
-    
-    if (clickDate) {
-      if (!totalAmountOfList) {
-        if (day.classList.contains('has-todo')) day.classList.remove('has-todo');
-
-      } else {
-        day.classList.add('has-todo');
-      } 
-    }
-  });
-}; 
-
-Todo.prototype.handleCheckboxToggle = function () {
-  const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
-  const $todoTexts = this.$todos.querySelectorAll('.todo-list .txt');
-
-  $checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('click', () => {
-      this.setNumberOfItemsLeft();
-    });
-  });
-
-  $todoTexts.forEach(todoText => {
-    todoText.addEventListener('click', ev => {
-      const $checkbox = ev.currentTarget.previousElementSibling.previousElementSibling;
-      $checkbox.checked = !$checkbox.checked;
-      this.setNumberOfItemsLeft();
-    });
-  });
-};
-
-Todo.prototype.editTodo = function () {
-  const $todoTexts = this.$todos.querySelectorAll('.todo-list .txt');
-  const $todoEditInputs = this.$todos.querySelectorAll('.todo-list .edit');
-
-  $todoTexts.forEach(todoText => {
-    todoText.addEventListener('dblclick', ev => {
-      const $checkbox = ev.currentTarget.previousElementSibling;
-      const $editInput = ev.currentTarget.nextElementSibling;
-      const $delButton = $editInput.nextElementSibling;
-
-      $editInput.value = ev.currentTarget.textContent;
-
-      ev.currentTarget.classList.add('hide');
-      $checkbox.classList.add('hide');
-      $delButton.classList.add('hide');
-      $editInput.classList.add('on');
-
-      $editInput.focus();
-    });
-  });
-
-  $todoEditInputs.forEach(input => {
-    input.addEventListener('blur', ev => {
-      
-      if (!ev.target.value) {
-        ev.target.parentElement.remove();
-        this.setNumberOfItemsLeft();
-        return;
+        this.backupCheckbox(checkedArray);
+        this.initEvent();
+        this.sortList();
       }
-
-      const $delButton = ev.target.nextElementSibling;
-      const $todoText = ev.target.previousElementSibling;
-      const $checkBox = $todoText.previousElementSibling;
-
-      $todoText.textContent = ev.target.value;
-
-      ev.target.classList.remove('on');
-      $checkBox.classList.remove('hide');
-      $todoText.classList.remove('hide');
-      $delButton.classList.remove('hide');
     });
-  });
+  };
 
-  $todoEditInputs.forEach(input => {
-    input.addEventListener('keydown', ev => {
-      if (ev.key === 'Enter') ev.target.blur();
-    });
-  });
-};
-
-Todo.prototype.checkAll = function () {
-  const $checkAll = this.$todos.querySelector('.check-all');
-  const $count = this.$todos.querySelector('.todo-tab .count');
-  const $clear = this.$todos.querySelector('.todo-tab .clear');
-  
-  $checkAll.addEventListener('click', () => {
+  Todo.prototype.backupCheckbox = function (checkedArray) {
     const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
-    const checkboxesLen = $checkboxes.length;
+
+    for (const i of checkedArray) {
+      $checkboxes[i].checked = true;
+    }
+
+    checkedArray = [];
+  };
+
+  Todo.prototype.setNumberOfItemsLeft = function () {
+    const $tab = this.$todos.querySelector('.todo-tab');
+    const $count = $tab.querySelector('.count');
+    const $clear = $tab.querySelector('.clear');
+    const $todoList = this.$todos.querySelector('.todo-list');
+    const $checkboxes = $todoList.querySelectorAll('.check-todo');
+    const $checkAll = this.$todos.querySelector('.check-all');
+    const totalAmountOfList = $todoList.querySelectorAll('li').length;
+    let countItemsLeft = totalAmountOfList;
 
     $checkboxes.forEach(checkbox => {
-      if ($checkAll.checked) {
-        $count.textContent = '0 items left';
-        checkbox.checked = true;
-        $clear.classList.add('on');
-        
-      } else {
-        $count.textContent = `${checkboxesLen} ${checkboxesLen === 1 ? `item` : `items`} left`;
-        checkbox.checked = false;
+      if (checkbox.checked) countItemsLeft--;
+    });
+
+    if (!countItemsLeft) {
+      $count.textContent = '0 item left';
+
+      if (!totalAmountOfList) {
+        $tab.classList.remove('on');
         $clear.classList.remove('on');
+        $checkAll.checked = false;
+
+      } else {
+        $tab.classList.add('on');
+        $clear.classList.add('on');
+        $checkAll.checked = true;
       }
-    });
-  });
-};
-
-Todo.prototype.deleteTodo = function () {
-  const $delButtons = this.$todos.querySelectorAll('.todo-list .del');
-
-  $delButtons.forEach(button => {
-    button.addEventListener('click', ev => {
-      ev.currentTarget.parentElement.remove();
-      this.setNumberOfItemsLeft();
-    });
-  });
-};
-
-Todo.prototype.tab = function () {
-  const $tabs = this.$todos.querySelectorAll('.tab-list li a');
-  
-  $tabs.forEach(tab => {
-    tab.addEventListener('click', ev => {
-      this.tabState = ev.target.dataset.type;
-
-      $tabs.forEach(tab => tab.classList.remove('on'));
-      ev.target.classList.add('on');
-
-      this.sortList();
-    });
-  });
-};
-
-Todo.prototype.sortList = function () {
-  const $todoLists = this.$todos.querySelectorAll('.todo-list li');
-
-  $todoLists.forEach(li => {
-    const $checkbox = li.children[0];
-
-    if (this.tabState === 'all') {
-      li.classList.remove('hide');
-
-    } else if (this.tabState === 'active') {
-      $checkbox.checked ? li.classList.add('hide') : li.classList.remove('hide');
 
     } else {
-      !$checkbox.checked ? li.classList.add('hide') : li.classList.remove('hide');
+      $count.textContent = `${countItemsLeft} ${countItemsLeft === 1 ? 'item' : 'items'} left`;
+      $tab.classList.add('on');
+      $checkAll.checked = false;
+
+      if (countItemsLeft !== totalAmountOfList) {
+        $clear.classList.add('on');
+      } else {
+        $clear.classList.remove('on');
+      }
     }
-  });
-};
 
-Todo.prototype.clearCompleted = function () {
-  const $clearButton = this.$todos.querySelector('.todo-tab .clear');
-  
-  $clearButton.addEventListener('click', () => {
-    const $todoLists = this.$todos.querySelectorAll('.todo-list li');
-    
-    $todoLists.forEach(list => {
-      const $checkbox = list.children[0];
-      const $delButton = list.children[4];
+    if (this.hasCalender) this.daysAddDot(totalAmountOfList);
+  };
 
-      if ($checkbox.checked) $delButton.click();
+  Todo.prototype.daysAddDot = function (totalAmountOfList) {
+    const $days = this.$calenderTable.querySelectorAll('tbody td');
+
+    $days.forEach(day => {
+      const clickDate = day.children[0].classList.contains('on');
+
+      if (clickDate) {
+        if (!totalAmountOfList) {
+          if (day.classList.contains('has-todo')) day.classList.remove('has-todo');
+
+        } else {
+          day.classList.add('has-todo');
+        }
+      }
     });
+  };
+
+  Todo.prototype.handleCheckboxToggle = function () {
+    const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
+    const $todoTexts = this.$todos.querySelectorAll('.todo-list .txt');
+
+    $checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('click', () => {
+        this.setNumberOfItemsLeft();
+      });
+    });
+
+    $todoTexts.forEach(todoText => {
+      todoText.addEventListener('click', ev => {
+        const $checkbox = ev.currentTarget.previousElementSibling.previousElementSibling;
+        $checkbox.checked = !$checkbox.checked;
+        this.setNumberOfItemsLeft();
+      });
+    });
+  };
+
+  Todo.prototype.editTodo = function () {
+    const $todoTexts = this.$todos.querySelectorAll('.todo-list .txt');
+    const $todoEditInputs = this.$todos.querySelectorAll('.todo-list .edit');
+
+    $todoTexts.forEach(todoText => {
+      todoText.addEventListener('dblclick', ev => {
+        const $checkbox = ev.currentTarget.previousElementSibling;
+        const $editInput = ev.currentTarget.nextElementSibling;
+        const $delButton = $editInput.nextElementSibling;
+
+        $editInput.value = ev.currentTarget.textContent;
+
+        ev.currentTarget.classList.add('hide');
+        $checkbox.classList.add('hide');
+        $delButton.classList.add('hide');
+        $editInput.classList.add('on');
+
+        $editInput.focus();
+      });
+    });
+
+    $todoEditInputs.forEach(input => {
+      input.addEventListener('blur', ev => {
+
+        if (!ev.target.value) {
+          ev.target.parentElement.remove();
+          this.setNumberOfItemsLeft();
+          return;
+        }
+
+        const $delButton = ev.target.nextElementSibling;
+        const $todoText = ev.target.previousElementSibling;
+        const $checkBox = $todoText.previousElementSibling;
+
+        $todoText.textContent = ev.target.value;
+
+        ev.target.classList.remove('on');
+        $checkBox.classList.remove('hide');
+        $todoText.classList.remove('hide');
+        $delButton.classList.remove('hide');
+      });
+    });
+
+    $todoEditInputs.forEach(input => {
+      input.addEventListener('keydown', ev => {
+        if (ev.key === 'Enter') ev.target.blur();
+      });
+    });
+  };
+
+  Todo.prototype.checkAll = function () {
+    const $checkAll = this.$todos.querySelector('.check-all');
+    const $count = this.$todos.querySelector('.todo-tab .count');
+    const $clear = this.$todos.querySelector('.todo-tab .clear');
+
+    $checkAll.addEventListener('click', () => {
+      const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
+      const checkboxesLen = $checkboxes.length;
+
+      $checkboxes.forEach(checkbox => {
+        if ($checkAll.checked) {
+          $count.textContent = '0 items left';
+          checkbox.checked = true;
+          $clear.classList.add('on');
+
+        } else {
+          $count.textContent = `${checkboxesLen} ${checkboxesLen === 1 ? `item` : `items`} left`;
+          checkbox.checked = false;
+          $clear.classList.remove('on');
+        }
+      });
+    });
+  };
+
+  Todo.prototype.deleteTodo = function () {
+    const $delButtons = this.$todos.querySelectorAll('.todo-list .del');
+
+    $delButtons.forEach(button => {
+      button.addEventListener('click', ev => {
+        ev.currentTarget.parentElement.remove();
+        this.setNumberOfItemsLeft();
+      });
+    });
+  };
+
+  Todo.prototype.tab = function () {
+    const $tabs = this.$todos.querySelectorAll('.tab-list li a');
+
+    $tabs.forEach(tab => {
+      tab.addEventListener('click', ev => {
+        this.tabState = ev.target.dataset.type;
+
+        $tabs.forEach(tab => tab.classList.remove('on'));
+        ev.target.classList.add('on');
+
+        this.sortList();
+      });
+    });
+  };
+
+  Todo.prototype.sortList = function () {
+    const $todoLists = this.$todos.querySelectorAll('.todo-list li');
+
+    $todoLists.forEach(li => {
+      const $checkbox = li.children[0];
+
+      if (this.tabState === 'all') {
+        li.classList.remove('hide');
+
+      } else if (this.tabState === 'active') {
+        $checkbox.checked ? li.classList.add('hide') : li.classList.remove('hide');
+
+      } else {
+        !$checkbox.checked ? li.classList.add('hide') : li.classList.remove('hide');
+      }
+    });
+  };
+
+  Todo.prototype.clearCompleted = function () {
+    const $clearButton = this.$todos.querySelector('.todo-tab .clear');
+
+    $clearButton.addEventListener('click', () => {
+      const $todoLists = this.$todos.querySelectorAll('.todo-list li');
+
+      $todoLists.forEach(list => {
+        const $checkbox = list.children[0];
+        const $delButton = list.children[4];
+
+        if ($checkbox.checked) $delButton.click();
+      });
+    });
+
+    $clearButton.classList.remove('on');
+  };
+
+  function Calender({ wrapSelector, todoSelector = null, hasTodo = false}) {
+    this.today = new Date();
+    this.day = this.today.getDay();
+    this.date = this.today.getDate();
+    this.month = this.today.getMonth();
+    this.year = this.today.getFullYear();
+
+    this.weekArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    this.monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    this.$calender = document.querySelector(wrapSelector);
+    this.$todo = document.querySelector(todoSelector);
+    this.hasTodo = hasTodo;
+    this.firstLoad = true;
+    this.saveTodo = {};
+    this.lastClickDate;
+
+    this.setDaily();
+    this.setMonthTitle();
+    this.markupMonth();
+    this.clickMonthArrow();
+
+    this.firstLoad = false;
+  }
+
+  Calender.prototype = new Todo({
+    todosSelector: '.todo',
+    calenderTableSelector: '.calendar-tbl',
+    hasCalender: true
   });
 
-  $clearButton.classList.remove('on');
-};
+  Calender.prototype.setDaily = function () {
+    const $day = this.$calender.querySelector('.daily .day');
+    const $date = this.$calender.querySelector('.daily .date');
+    const monthDtatYear = `${(this.monthArr[this.month]).toLowerCase()}${this.date}${this.year}`;
 
-function Calender({ wrapSelector, todoSelector = null, hasTodo = false}) {
-  this.today = new Date();
-  this.day = this.today.getDay();
-  this.date = this.today.getDate();
-  this.month = this.today.getMonth();
-  this.year = this.today.getFullYear();
+    $day.textContent = this.weekArr[this.day];
+    $date.textContent = this.date;
+    this.lastClickDate = monthDtatYear;
+  };
 
-  this.weekArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  this.monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  Calender.prototype.setMonthTitle = function () {
+    const monthYear = `${this.monthArr[this.month]} ${this.year}`;
 
-  this.$calender = document.querySelector(wrapSelector);
-  this.$todo = document.querySelector(todoSelector);
-  this.hasTodo = hasTodo;
-  this.firstLoad = true;
-  this.saveTodo = {};
-  this.lastClickDate;
+    this.$calender.querySelector('.month-control .month').textContent = monthYear;
+  };
 
-  this.setDaily();
-  this.setMonthTitle();
-  this.markupMonth();
-  this.clickMonthArrow();
+  Calender.prototype.markupMonth = function () {
+    const $tbody = this.$calender.querySelector('.calendar-tbl tbody');
 
-  this.firstLoad = false;
-}
+    const getFirstDay = new Date(this.year, this.month, 1);
+    const firstDay = getFirstDay.getDay();
 
-Calender.prototype = new Todo({
-  todosSelector: '.todo', 
-  calenderTableSelector: '.calendar-tbl',
-  hasCalender: true
-});
+    const getLastDate = new Date(this.year, this.month + 1, 0);
+    const lastDate = getLastDate.getDate();
 
-Calender.prototype.setDaily = function () {
-  const $day = this.$calender.querySelector('.daily .day');
-  const $date = this.$calender.querySelector('.daily .date');
-  const monthDtatYear = `${(this.monthArr[this.month]).toLowerCase()}${this.date}${this.year}`;
+    const totalDay = lastDate + firstDay;
+    const monthRow = Math.ceil(totalDay / 7);
 
-  $day.textContent = this.weekArr[this.day];
-  $date.textContent = this.date;
-  this.lastClickDate = monthDtatYear;
-};
-
-Calender.prototype.setMonthTitle = function () {
-  const monthYear = `${this.monthArr[this.month]} ${this.year}`;
-  
-  this.$calender.querySelector('.month-control .month').textContent = monthYear;
-};
-
-Calender.prototype.markupMonth = function () {
-  const $tbody = this.$calender.querySelector('.calendar-tbl tbody'); 
-
-  const getFirstDay = new Date(this.year, this.month, 1);
-  const firstDay = getFirstDay.getDay();
-
-  const getLastDate = new Date(this.year, this.month + 1, 0);
-  const lastDate = getLastDate.getDate();
-
-  const totalDay = lastDate + firstDay;
-  const monthRow = Math.ceil(totalDay / 7);
-
-  const markup = `
+    const markup = `
     ${Array(monthRow).fill().map((row, rowIndex) => {
       return `
         <tr>
           ${Array(7).fill().map((day, dayIndex) => {
-            
-            let findDay = (rowIndex * 7) + (dayIndex + 1) - firstDay; 
-            findDay = (findDay <= 0 || findDay > lastDate) ? '' : findDay;
-            
-            const isToday = this.firstLoad && findDay === this.today.getDate();
-            const compareDate = `${(this.monthArr[this.month]).toLowerCase()}${findDay}${this.year}`;
-            const isLastClick = compareDate === this.lastClickDate;
-            
-            const addBgClass = (isToday || isLastClick) ? 'on' : '';
-            let hasTodoList = false;
-            if(this.hasTodo) {
-              const listLen = this.$todo.querySelectorAll('.todo-list li').length;
-              if ((addBgClass && listLen || !addBgClass && this.saveTodo[compareDate])) {
-                hasTodoList = true;
-              }
-            }
-            
-            return `
+
+        let findDay = (rowIndex * 7) + (dayIndex + 1) - firstDay;
+        findDay = (findDay <= 0 || findDay > lastDate) ? '' : findDay;
+
+        const isToday = this.firstLoad && findDay === this.today.getDate();
+        const compareDate = `${(this.monthArr[this.month]).toLowerCase()}${findDay}${this.year}`;
+        const isLastClick = compareDate === this.lastClickDate;
+
+        const addBgClass = (isToday || isLastClick) ? 'on' : '';
+        let hasTodoList = false;
+        if(this.hasTodo) {
+          const listLen = this.$todo.querySelectorAll('.todo-list li').length;
+          if ((addBgClass && listLen || !addBgClass && this.saveTodo[compareDate])) {
+            hasTodoList = true;
+          }
+        }
+
+        return `
               <td ${hasTodoList ? `class='has-todo'` : ''}>
                 <a href="#" ${addBgClass ? `class=${addBgClass}` : ''} data-day="${dayIndex}">${findDay}</a>
               </td>
             `;
-          }).join('')}
+      }).join('')}
         </tr>
       `;
     }).join('')}
   `;
 
-  $tbody.innerHTML = markup;
+    $tbody.innerHTML = markup;
 
-  this.clickDate();
-};
+    this.clickDate();
+  };
 
-Calender.prototype.clickMonthArrow = function () {
-  const $arrows = this.$calender.querySelectorAll('.month-control .button');
-  let monthInterval;
-  let isLongPress = false;
+  Calender.prototype.clickMonthArrow = function () {
+    const $arrows = this.$calender.querySelectorAll('.month-control .button');
+    let monthInterval;
+    let isLongPress = false;
 
-  $arrows.forEach(arrow => {
-    arrow.addEventListener('mousedown', () => {
-      isLongPress = true;
-      monthInterval = setInterval(() => {this.changeMonth(arrow)}, 200);
+    $arrows.forEach(arrow => {
+      arrow.addEventListener('mousedown', () => {
+        isLongPress = true;
+        monthInterval = setInterval(() => {this.changeMonth(arrow)}, 200);
+      });
+
+      arrow.addEventListener('click', () => this.changeMonth(arrow));
+
+      arrow.addEventListener('mouseup', () => this.stopChangingMonth(isLongPress, monthInterval));
+      arrow.addEventListener('mouseleave', () => this.stopChangingMonth(isLongPress, monthInterval));
     });
+  };
 
-    arrow.addEventListener('click', () => this.changeMonth(arrow));
+  Calender.prototype.changeMonth = function (arrow) {
+    const isPrevButton = arrow.classList.contains('prev-button');
 
-    arrow.addEventListener('mouseup', () => this.stopChangingMonth(isLongPress, monthInterval));
-    arrow.addEventListener('mouseleave', () => this.stopChangingMonth(isLongPress, monthInterval));
-  });
-};
-
-Calender.prototype.changeMonth = function (arrow) {
-  const isPrevButton = arrow.classList.contains('prev-button');
-  
-  if (isPrevButton) {
-    if (!this.month) {
-      this.month = 11;
-      this.year -= 1;
-    } else {
-      this.month -= 1;
-    }
-
-  } else {
-    if (this.month === 11) {
-      this.month = 0;
-      this.year += 1;
-    } else {
-      this.month += 1;
-    }
-  }
-
-  this.setMonthTitle();
-  this.markupMonth();
-};
-
-Calender.prototype.stopChangingMonth = function (isLongPress, monthInterval) {
-  if (isLongPress) {
-    clearInterval(monthInterval);
-    isLongPress = false;
-  }
-}
-
-Calender.prototype.clickDate = function () {
-  const $days = this.$calender.querySelectorAll('.calendar-tbl td a');
-
-  $days.forEach((day) => {
-    day.addEventListener('click', ev => {
-      if (this.hasTodo) {
-        this.syncTodo();
-        this.resetTodoList();
+    if (isPrevButton) {
+      if (!this.month) {
+        this.month = 11;
+        this.year -= 1;
+      } else {
+        this.month -= 1;
       }
 
-      $days.forEach(el => el.classList.remove('on'));
-      ev.currentTarget.classList.add('on');
+    } else {
+      if (this.month === 11) {
+        this.month = 0;
+        this.year += 1;
+      } else {
+        this.month += 1;
+      }
+    }
 
-      this.date = ev.currentTarget.textContent;
-      this.day = ev.currentTarget.dataset.day;
+    this.setMonthTitle();
+    this.markupMonth();
+  };
 
-      this.setDaily();
-      if (this.hasTodo) this.importTodoList();
+  Calender.prototype.stopChangingMonth = function (isLongPress, monthInterval) {
+    if (isLongPress) {
+      clearInterval(monthInterval);
+      isLongPress = false;
+    }
+  }
+
+  Calender.prototype.clickDate = function () {
+    const $days = this.$calender.querySelectorAll('.calendar-tbl td a');
+
+    $days.forEach((day) => {
+      day.addEventListener('click', ev => {
+        if (this.hasTodo) {
+          this.syncTodo();
+          this.resetTodoList();
+        }
+
+        $days.forEach(el => el.classList.remove('on'));
+        ev.currentTarget.classList.add('on');
+
+        this.date = ev.currentTarget.textContent;
+        this.day = ev.currentTarget.dataset.day;
+
+        this.setDaily();
+        if (this.hasTodo) this.importTodoList();
+      });
     });
-  });
-};
+  };
 
 
-Calender.prototype.syncTodo = function () {
-  const $todoTexts = Array.from(this.$todo.querySelectorAll('.todo-list .txt'));
-  const $checkAll = this.$todo.querySelector('.check-all');
-  const day = this.lastClickDate;
-  const hasNothingTodo = !$todoTexts.length && !this.saveTodo[day];
-  const isDeletedAtPresent = !$todoTexts.length && this.saveTodo[day];
-  const $checkBoxsofTodolist = this.$todo.querySelectorAll('.todo-list .check-todo');
-  let checkedIndex = [];
+  Calender.prototype.syncTodo = function () {
+    const $todoTexts = Array.from(this.$todo.querySelectorAll('.todo-list .txt'));
+    const $checkAll = this.$todo.querySelector('.check-all');
+    const day = this.lastClickDate;
+    const hasNothingTodo = !$todoTexts.length && !this.saveTodo[day];
+    const isDeletedAtPresent = !$todoTexts.length && this.saveTodo[day];
+    const $checkBoxsofTodolist = this.$todo.querySelectorAll('.todo-list .check-todo');
+    let checkedIndex = [];
 
-  if (isDeletedAtPresent) return delete this.saveTodo[day];
-  if (hasNothingTodo) return;
+    if (isDeletedAtPresent) return delete this.saveTodo[day];
+    if (hasNothingTodo) return;
 
-  $checkBoxsofTodolist.forEach((box, index) => {
-    if (box.checked === true) checkedIndex.push(index);
-  });
+    $checkBoxsofTodolist.forEach((box, index) => {
+      if (box.checked === true) checkedIndex.push(index);
+    });
 
-  const todoListTextArray = $todoTexts.map(text => text.textContent);
+    const todoListTextArray = $todoTexts.map(text => text.textContent);
 
-  this.saveTodo[day] = [];
-  this.saveTodo[day][0] = todoListTextArray;
-  this.saveTodo[day][1] = checkedIndex;
+    this.saveTodo[day] = [];
+    this.saveTodo[day][0] = todoListTextArray;
+    this.saveTodo[day][1] = checkedIndex;
 
-  $checkAll.checked = false;
-};
+    $checkAll.checked = false;
+  };
 
-Calender.prototype.importTodoList = function () {
-  if (!this.saveTodo[this.lastClickDate] || !this.saveTodo[this.lastClickDate][0].length) return;
-  
-  const isSavedTodo = this.saveTodo[this.lastClickDate];
-  const savedTodoList = isSavedTodo[0];
-  const savedCheckList = isSavedTodo[1];
+  Calender.prototype.importTodoList = function () {
+    if (!this.saveTodo[this.lastClickDate] || !this.saveTodo[this.lastClickDate][0].length) return;
 
-  const tabs = this.$todo.querySelectorAll('.tab-list a');
-  const todoList = this.$todo.querySelector('.todo-list');
-  this.tabState = 'all';
+    const isSavedTodo = this.saveTodo[this.lastClickDate];
+    const savedTodoList = isSavedTodo[0];
+    const savedCheckList = isSavedTodo[1];
 
-  tabs.forEach((tab, index) => index === 0 ? tab.classList.add('on') : tab.classList.remove('on'));
+    const tabs = this.$todo.querySelectorAll('.tab-list a');
+    const todoList = this.$todo.querySelector('.todo-list');
+    this.tabState = 'all';
 
-  const markup = `
+    tabs.forEach((tab, index) => index === 0 ? tab.classList.add('on') : tab.classList.remove('on'));
+
+    const markup = `
     ${savedTodoList.map((text,index) => {
       return `
         <li>
@@ -631,37 +631,37 @@ Calender.prototype.importTodoList = function () {
     }).join('')}
   `;
 
-  todoList.innerHTML = markup;
-    
-  if (savedCheckList.length) {
-    const checkboxes = this.$todo.querySelectorAll('.todo-list .check-todo');
+    todoList.innerHTML = markup;
 
-    checkboxes.forEach((checkbox, index) => {
-      const isChecked = savedCheckList.includes(index);
+    if (savedCheckList.length) {
+      const checkboxes = this.$todo.querySelectorAll('.todo-list .check-todo');
 
-      if (isChecked) checkbox.checked = true;
-    });
-  }
-  
-  this.initEvent();
-};
+      checkboxes.forEach((checkbox, index) => {
+        const isChecked = savedCheckList.includes(index);
 
-Calender.prototype.resetTodoList = function () {
-  const $list = this.$todo.querySelector('.todo-list');
-  const $tab = this.$todo.querySelector('.todo-tab');
-  const $tabAll = $tab.querySelector('.all');
+        if (isChecked) checkbox.checked = true;
+      });
+    }
 
-  $list.innerHTML = '';
-  $tab.classList.remove('on');
-  $tabAll.click();
+    this.initEvent();
+  };
 
-};
+  Calender.prototype.resetTodoList = function () {
+    const $list = this.$todo.querySelector('.todo-list');
+    const $tab = this.$todo.querySelector('.todo-tab');
+    const $tabAll = $tab.querySelector('.all');
 
-new Calender({
-  wrapSelector: '.calendar-wrap',
-  todoSelector:  '.todo',
-  hasTodo: true
-});
-    </script>
-  </body>
+    $list.innerHTML = '';
+    $tab.classList.remove('on');
+    $tabAll.click();
+
+  };
+
+  new Calender({
+    wrapSelector: '.calendar-wrap',
+    todoSelector:  '.todo',
+    hasTodo: true
+  });
+</script>
+</body>
 </html>

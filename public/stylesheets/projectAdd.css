@@ -34,12 +34,16 @@ a:active { color: red; text-decoration: none; !important}
 
 }
 
+.add-button {
+    text-align: right;
+}
+
 .input-box {
     display: block;
     width: 100%;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
@@ -55,7 +59,7 @@ a:active { color: red; text-decoration: none; !important}
     width: 100%;
     height: calc(8.5em + .75rem + 2px);
     padding: .375rem .75rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.5;
     color: #495057;

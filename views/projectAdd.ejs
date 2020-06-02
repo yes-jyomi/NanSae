@@ -61,16 +61,22 @@
 
 <div class="context container">
 
-    <form method="post" action="/license/add">
-        <div class="float-right">
+    <form method="post" action="/project">
+        <div class="add-button">
             <button type="submit" class="add-license btn btn-default btn-primary">추가</button>
         </div>
 
         <div class="page-header">
-            <input class="input-box add-license input-lg" type="text" name="license_name" placeholder="자격증명"/>
-            <input class="input-box add-license input-lg" type="date" name="license_date"/>
-            <input class="input-box add-license input-lg" type="text" name="license_company" placeholder="발행처"/>
-            <textarea class="textarea-box add-license" rows="5" name="licence_context" placeholder="자격증 내용"></textarea>
+            <label for="project_name" class="info">프로젝트명</label>
+            <input class="input-box add-license input-lg" type="text" name="project_name" id="project_name"/>
+
+            <label for="use_language" class="info">사용 언어</label>
+            <input class="input-box add-license input-lg" type="text" name="use_language" id="use_language"/>
+
+            <label for="project_context" class="info">프로젝트 내용</label>
+            <textarea class="textarea-box add-license" rows="5" name="project_context" id="project_context"></textarea>
+
+            여기서 이미지를 몇장이든 추가하게 해야하는데 어카지
         </div>
     </form>
 

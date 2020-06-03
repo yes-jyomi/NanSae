@@ -13,9 +13,22 @@
     "express": "~4.16.1",
     "express-server": "^0.7.0",
     "express-session": "^1.17.1",
-    "firebase": "^7.13.1",
+    "firebase": "^7.14.5",
     "http-errors": "^1.6.3",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1"
-  }
+  },
+  "description": "2020 it-show",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yes-jyomi/NanSae.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yes-jyomi/NanSae/issues"
+  },
+  "homepage": "https://github.com/yes-jyomi/NanSae#readme"
 }

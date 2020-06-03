@@ -7,8 +7,7 @@ router.get('/', function(req, res, next) {
     Activity.findAll({
        where: {
            user_id: 's2018w01'
-       },
-        order: 'act_start DESC'
+       }
     }).then((list) => {
         res.render('outdoorList', {
             title: list.act_name,

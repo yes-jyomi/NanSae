@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
   //   });
   // }
   id = 's2018w01';
-  res.redirect('users/mypage/id');
+  res.redirect('users/mypage/'+id);
 });
 
 // user 에 있는 데이터 가져오는 함수
@@ -34,18 +34,36 @@ router.get('/mypage', function(req, res, next) {
   //   res.redirect('/users/mypage/:id');
   // else
   //   res.redirect('/users/login');
-  res.redirect('/users/mypage/s2018w01')
+  var id = 's2018w01';
+
+  User.findAll({
+    where: {user_id: id}
+  }).then((result) => {
+    res.render('mypage', {
+      user_id: id,
+      name: result.user_name,
+      phone: result.user_phone,
+      zipcode: result.user_zipcode,
+      address: result.user_address,
+      email: result.user_email,
+      blog: result.user_blog
+    });
+  }).catch(err => {
+    console.error('err: ' + err);
+  });
 });
 
 // 마이페이지: 세션X -> login, 세션O -> 정보 가져옴
 router.get('/mypage/:id', function(req, res, next) {
+  // var id = req.params.id;
+
   // if (!req.session.uid)
   //   res.redirect('/users/login');
-
-  var id = 's2018w01';
-
-  const mypage_id = id;
-  get_data(mypage_id, res);
+  //
+  // var id = req.params.id;
+  //
+  // const mypage_id = id;
+  // get_data(mypage_id, res);
 });
 
 router.post('/mypage', function(req, res, next) {
@@ -67,20 +85,20 @@ router.post('/mypage', function(req, res, next) {
     if (blog === null) blog = "";
   };
 
-  User.update(
-      {
-        user_pwd: pwd,
-        user_name: name,
-        user_phone: phone,
-        user_email: email,
-        user_zipcode: zipcode,
-        user_address: address,
-        user_blog: blog
-      },
-      {
-        where: {user_id: id}
-      }
-  ).then(() => {
+  User.update({
+    attributes: {
+      user_pwd: pwd,
+      user_name: name,
+      user_phone: phone,
+      user_email: email,
+      user_zipcode: zipcode,
+      user_address: address,
+      user_blog: blog
+    },
+    where: {
+      user_id: id
+    }
+  }).then(() => {
     get_data(id, res);
   }).catch(err => {
     console.error('err: ' + err);

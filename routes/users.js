@@ -5,15 +5,17 @@ const {User} = require('../models');
 
 // session 존재 -> mypage, session 존재X -> login (끝)
 router.get('/', function(req, res, next) {
-  if (req.session.uid) {
-    res.redirect('/users/login', {
-      uid: req.session.uid
-    });
-  } else {
-    res.redirect('users/mypage/:id', {
-      uid: req.session.uid
-    });
-  }
+  // if (req.session.uid) {
+  //   res.redirect('/users/login', {
+  //     uid: req.session.uid
+  //   });
+  // } else {
+  //   res.redirect('users/mypage/:id', {
+  //     uid: req.session.uid
+  //   });
+  // }
+  id = 's2018w01';
+  res.redirect('users/mypage/'+id);
 });
 
 // user 에 있는 데이터 가져오는 함수
@@ -28,28 +30,47 @@ function get_data(id, res) {
 }
 
 router.get('/mypage', function(req, res, next) {
-  if (req.session.uId)
-    res.redirect('/users/mypage/:id');
-  else
-    res.redirect('/users/login');
-})
+  // if (req.session.uId)
+  //   res.redirect('/users/mypage/:id');
+  // else
+  //   res.redirect('/users/login');
+  var id = 's2018w01';
+
+  User.findAll({
+    where: {user_id: id}
+  }).then((result) => {
+    res.render('mypage', {
+      user_id: id,
+      name: result.user_name,
+      phone: result.user_phone,
+      zipcode: result.user_zipcode,
+      address: result.user_address,
+      email: result.user_email,
+      blog: result.user_blog
+    });
+  }).catch(err => {
+    console.error('err: ' + err);
+  });
+});
 
 // 마이페이지: 세션X -> login, 세션O -> 정보 가져옴
 router.get('/mypage/:id', function(req, res, next) {
-  if (!req.session.uid)
-    res.redirect('/users/login');
+  // var id = req.params.id;
 
-  var id = req.params.id;
-
-  const mypage_id = req.session.uid;
-  get_data(mypage_id, res);
+  // if (!req.session.uid)
+  //   res.redirect('/users/login');
+  //
+  // var id = req.params.id;
+  //
+  // const mypage_id = id;
+  // get_data(mypage_id, res);
 });
 
 router.post('/mypage', function(req, res, next) {
   if (!req.session.uid)
     res.redirect('/users/login');
 
-  const id = req.session.uid;
+  const id = 's2018w011';
   const pwd = req.body.pwd;
   const name = req.body.name;
   const phone = req.body.phone;
@@ -64,20 +85,20 @@ router.post('/mypage', function(req, res, next) {
     if (blog === null) blog = "";
   };
 
-  User.update(
-      {
-        user_pwd: pwd,
-        user_name: name,
-        user_phone: phone,
-        user_email: email,
-        user_zipcode: zipcode,
-        user_address: address,
-        user_blog: blog
-      },
-      {
-        where: {user_id: id}
-      }
-  ).then(() => {
+  User.update({
+    attributes: {
+      user_pwd: pwd,
+      user_name: name,
+      user_phone: phone,
+      user_email: email,
+      user_zipcode: zipcode,
+      user_address: address,
+      user_blog: blog
+    },
+    where: {
+      user_id: id
+    }
+  }).then(() => {
     get_data(id, res);
   }).catch(err => {
     console.error('err: ' + err);

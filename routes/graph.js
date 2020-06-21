@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+const {Score} = require('../models');
+
 
 router.get('/', function(req, res, next) {
     res.redirect('/graph/score');

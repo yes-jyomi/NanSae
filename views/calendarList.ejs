@@ -137,29 +137,56 @@
     this.$calenderTable = document.querySelector(calenderTableSelector);
     this.hasCalender = hasCalender;
     this.tabState = 'all';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     this.addNewTodo();
     this.checkAll();
     this.tab();
     this.clearCompleted();
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
   Todo.prototype.initEvent = function () {
     this.setNumberOfItemsLeft();
     this.handleCheckboxToggle();
     this.editTodo();
     this.deleteTodo();
   };
+<<<<<<< HEAD
   Todo.prototype.addNewTodo = function () {
     const $newTodoInput = this.$todos.querySelector('.add-input');
     $newTodoInput.addEventListener('keydown', ev => {
       if (ev.key === 'Enter') {
         if (!$newTodoInput.value) return alert('쒸익쒸익 내용을 입력해 주세요~');
+=======
+
+  Todo.prototype.addNewTodo = function () {
+    const $newTodoInput = this.$todos.querySelector('.add-input');
+
+    $newTodoInput.addEventListener('keydown', ev => {
+      if (ev.key === 'Enter') {
+        if (!$newTodoInput.value) return alert('쒸익쒸익 내용을 입력해 주세요~');
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
         const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
         const $list = this.$todos.querySelector('.todo-list');
         const totalAmountOfList = this.$todos.querySelectorAll('.todo-list li').length;
         let checkedArray = [];
+<<<<<<< HEAD
         $checkboxes.forEach((checkbox, index) => {
           if (checkbox.checked) checkedArray.push(index);
         });
+=======
+
+        $checkboxes.forEach((checkbox, index) => {
+          if (checkbox.checked) checkedArray.push(index);
+        });
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
         $list.innerHTML += `
         <li>
           <input type="checkbox" id="check-todo${totalAmountOfList}" class="check-todo">
@@ -169,13 +196,20 @@
           <a href="#" class="del">×</a>
         </li>
       `;
+<<<<<<< HEAD
         $newTodoInput.value = '';
+=======
+
+        $newTodoInput.value = '';
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
         this.backupCheckbox(checkedArray);
         this.initEvent();
         this.sortList();
       }
     });
   };
+<<<<<<< HEAD
   Todo.prototype.backupCheckbox = function (checkedArray) {
     const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
     for (const i of checkedArray) {
@@ -183,6 +217,19 @@
     }
     checkedArray = [];
   };
+=======
+
+  Todo.prototype.backupCheckbox = function (checkedArray) {
+    const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
+
+    for (const i of checkedArray) {
+      $checkboxes[i].checked = true;
+    }
+
+    checkedArray = [];
+  };
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
   Todo.prototype.setNumberOfItemsLeft = function () {
     const $tab = this.$todos.querySelector('.todo-tab');
     const $count = $tab.querySelector('.count');
@@ -192,30 +239,54 @@
     const $checkAll = this.$todos.querySelector('.check-all');
     const totalAmountOfList = $todoList.querySelectorAll('li').length;
     let countItemsLeft = totalAmountOfList;
+<<<<<<< HEAD
     $checkboxes.forEach(checkbox => {
       if (checkbox.checked) countItemsLeft--;
     });
     if (!countItemsLeft) {
       $count.textContent = '0 item left';
+=======
+
+    $checkboxes.forEach(checkbox => {
+      if (checkbox.checked) countItemsLeft--;
+    });
+
+    if (!countItemsLeft) {
+      $count.textContent = '0 item left';
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
       if (!totalAmountOfList) {
         $tab.classList.remove('on');
         $clear.classList.remove('on');
         $checkAll.checked = false;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
       } else {
         $tab.classList.add('on');
         $clear.classList.add('on');
         $checkAll.checked = true;
       }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     } else {
       $count.textContent = `${countItemsLeft} ${countItemsLeft === 1 ? 'item' : 'items'} left`;
       $tab.classList.add('on');
       $checkAll.checked = false;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
       if (countItemsLeft !== totalAmountOfList) {
         $clear.classList.add('on');
       } else {
         $clear.classList.remove('on');
       }
     }
+<<<<<<< HEAD
     if (this.hasCalender) this.daysAddDot(totalAmountOfList);
   };
   Todo.prototype.daysAddDot = function (totalAmountOfList) {
@@ -225,20 +296,48 @@
       if (clickDate) {
         if (!totalAmountOfList) {
           if (day.classList.contains('has-todo')) day.classList.remove('has-todo');
+=======
+
+    if (this.hasCalender) this.daysAddDot(totalAmountOfList);
+  };
+
+  Todo.prototype.daysAddDot = function (totalAmountOfList) {
+    const $days = this.$calenderTable.querySelectorAll('tbody td');
+
+    $days.forEach(day => {
+      const clickDate = day.children[0].classList.contains('on');
+
+      if (clickDate) {
+        if (!totalAmountOfList) {
+          if (day.classList.contains('has-todo')) day.classList.remove('has-todo');
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
         } else {
           day.classList.add('has-todo');
         }
       }
     });
   };
+<<<<<<< HEAD
   Todo.prototype.handleCheckboxToggle = function () {
     const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
     const $todoTexts = this.$todos.querySelectorAll('.todo-list .txt');
+=======
+
+  Todo.prototype.handleCheckboxToggle = function () {
+    const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
+    const $todoTexts = this.$todos.querySelectorAll('.todo-list .txt');
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     $checkboxes.forEach(checkbox => {
       checkbox.addEventListener('click', () => {
         this.setNumberOfItemsLeft();
       });
     });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     $todoTexts.forEach(todoText => {
       todoText.addEventListener('click', ev => {
         const $checkbox = ev.currentTarget.previousElementSibling.previousElementSibling;
@@ -247,57 +346,112 @@
       });
     });
   };
+<<<<<<< HEAD
   Todo.prototype.editTodo = function () {
     const $todoTexts = this.$todos.querySelectorAll('.todo-list .txt');
     const $todoEditInputs = this.$todos.querySelectorAll('.todo-list .edit');
+=======
+
+  Todo.prototype.editTodo = function () {
+    const $todoTexts = this.$todos.querySelectorAll('.todo-list .txt');
+    const $todoEditInputs = this.$todos.querySelectorAll('.todo-list .edit');
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     $todoTexts.forEach(todoText => {
       todoText.addEventListener('dblclick', ev => {
         const $checkbox = ev.currentTarget.previousElementSibling;
         const $editInput = ev.currentTarget.nextElementSibling;
         const $delButton = $editInput.nextElementSibling;
+<<<<<<< HEAD
         $editInput.value = ev.currentTarget.textContent;
+=======
+
+        $editInput.value = ev.currentTarget.textContent;
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
         ev.currentTarget.classList.add('hide');
         $checkbox.classList.add('hide');
         $delButton.classList.add('hide');
         $editInput.classList.add('on');
+<<<<<<< HEAD
         $editInput.focus();
       });
     });
     $todoEditInputs.forEach(input => {
       input.addEventListener('blur', ev => {
+=======
+
+        $editInput.focus();
+      });
+    });
+
+    $todoEditInputs.forEach(input => {
+      input.addEventListener('blur', ev => {
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
         if (!ev.target.value) {
           ev.target.parentElement.remove();
           this.setNumberOfItemsLeft();
           return;
         }
+<<<<<<< HEAD
         const $delButton = ev.target.nextElementSibling;
         const $todoText = ev.target.previousElementSibling;
         const $checkBox = $todoText.previousElementSibling;
         $todoText.textContent = ev.target.value;
+=======
+
+        const $delButton = ev.target.nextElementSibling;
+        const $todoText = ev.target.previousElementSibling;
+        const $checkBox = $todoText.previousElementSibling;
+
+        $todoText.textContent = ev.target.value;
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
         ev.target.classList.remove('on');
         $checkBox.classList.remove('hide');
         $todoText.classList.remove('hide');
         $delButton.classList.remove('hide');
       });
     });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     $todoEditInputs.forEach(input => {
       input.addEventListener('keydown', ev => {
         if (ev.key === 'Enter') ev.target.blur();
       });
     });
   };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
   Todo.prototype.checkAll = function () {
     const $checkAll = this.$todos.querySelector('.check-all');
     const $count = this.$todos.querySelector('.todo-tab .count');
     const $clear = this.$todos.querySelector('.todo-tab .clear');
+<<<<<<< HEAD
     $checkAll.addEventListener('click', () => {
       const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
       const checkboxesLen = $checkboxes.length;
+=======
+
+    $checkAll.addEventListener('click', () => {
+      const $checkboxes = this.$todos.querySelectorAll('.todo-list .check-todo');
+      const checkboxesLen = $checkboxes.length;
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
       $checkboxes.forEach(checkbox => {
         if ($checkAll.checked) {
           $count.textContent = '0 items left';
           checkbox.checked = true;
           $clear.classList.add('on');
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
         } else {
           $count.textContent = `${checkboxesLen} ${checkboxesLen === 1 ? `item` : `items`} left`;
           checkbox.checked = false;
@@ -306,8 +460,15 @@
       });
     });
   };
+<<<<<<< HEAD
   Todo.prototype.deleteTodo = function () {
     const $delButtons = this.$todos.querySelectorAll('.todo-list .del');
+=======
+
+  Todo.prototype.deleteTodo = function () {
+    const $delButtons = this.$todos.querySelectorAll('.todo-list .del');
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     $delButtons.forEach(button => {
       button.addEventListener('click', ev => {
         ev.currentTarget.parentElement.remove();
@@ -315,6 +476,7 @@
       });
     });
   };
+<<<<<<< HEAD
   Todo.prototype.tab = function () {
     const $tabs = this.$todos.querySelectorAll('.tab-list li a');
     $tabs.forEach(tab => {
@@ -322,10 +484,24 @@
         this.tabState = ev.target.dataset.type;
         $tabs.forEach(tab => tab.classList.remove('on'));
         ev.target.classList.add('on');
+=======
+
+  Todo.prototype.tab = function () {
+    const $tabs = this.$todos.querySelectorAll('.tab-list li a');
+
+    $tabs.forEach(tab => {
+      tab.addEventListener('click', ev => {
+        this.tabState = ev.target.dataset.type;
+
+        $tabs.forEach(tab => tab.classList.remove('on'));
+        ev.target.classList.add('on');
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
         this.sortList();
       });
     });
   };
+<<<<<<< HEAD
   Todo.prototype.sortList = function () {
     const $todoLists = this.$todos.querySelectorAll('.todo-list li');
     $todoLists.forEach(li => {
@@ -334,11 +510,27 @@
         li.classList.remove('hide');
       } else if (this.tabState === 'active') {
         $checkbox.checked ? li.classList.add('hide') : li.classList.remove('hide');
+=======
+
+  Todo.prototype.sortList = function () {
+    const $todoLists = this.$todos.querySelectorAll('.todo-list li');
+
+    $todoLists.forEach(li => {
+      const $checkbox = li.children[0];
+
+      if (this.tabState === 'all') {
+        li.classList.remove('hide');
+
+      } else if (this.tabState === 'active') {
+        $checkbox.checked ? li.classList.add('hide') : li.classList.remove('hide');
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
       } else {
         !$checkbox.checked ? li.classList.add('hide') : li.classList.remove('hide');
       }
     });
   };
+<<<<<<< HEAD
   Todo.prototype.clearCompleted = function () {
     const $clearButton = this.$todos.querySelector('.todo-tab .clear');
     $clearButton.addEventListener('click', () => {
@@ -351,39 +543,86 @@
     });
     $clearButton.classList.remove('on');
   };
+=======
+
+  Todo.prototype.clearCompleted = function () {
+    const $clearButton = this.$todos.querySelector('.todo-tab .clear');
+
+    $clearButton.addEventListener('click', () => {
+      const $todoLists = this.$todos.querySelectorAll('.todo-list li');
+
+      $todoLists.forEach(list => {
+        const $checkbox = list.children[0];
+        const $delButton = list.children[4];
+
+        if ($checkbox.checked) $delButton.click();
+      });
+    });
+
+    $clearButton.classList.remove('on');
+  };
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
   function Calender({ wrapSelector, todoSelector = null, hasTodo = false}) {
     this.today = new Date();
     this.day = this.today.getDay();
     this.date = this.today.getDate();
     this.month = this.today.getMonth();
     this.year = this.today.getFullYear();
+<<<<<<< HEAD
     this.weekArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     this.monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+=======
+
+    this.weekArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    this.monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     this.$calender = document.querySelector(wrapSelector);
     this.$todo = document.querySelector(todoSelector);
     this.hasTodo = hasTodo;
     this.firstLoad = true;
     this.saveTodo = {};
     this.lastClickDate;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     this.setDaily();
     this.setMonthTitle();
     this.markupMonth();
     this.clickMonthArrow();
+<<<<<<< HEAD
     this.firstLoad = false;
   }
+=======
+
+    this.firstLoad = false;
+  }
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
   Calender.prototype = new Todo({
     todosSelector: '.todo',
     calenderTableSelector: '.calendar-tbl',
     hasCalender: true
   });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
   Calender.prototype.setDaily = function () {
     const $day = this.$calender.querySelector('.daily .day');
     const $date = this.$calender.querySelector('.daily .date');
     const monthDtatYear = `${(this.monthArr[this.month]).toLowerCase()}${this.date}${this.year}`;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     $day.textContent = this.weekArr[this.day];
     $date.textContent = this.date;
     this.lastClickDate = monthDtatYear;
   };
+<<<<<<< HEAD
   Calender.prototype.setMonthTitle = function () {
     const monthYear = `${this.monthArr[this.month]} ${this.year}`;
     this.$calender.querySelector('.month-control .month').textContent = monthYear;
@@ -396,16 +635,48 @@
     const lastDate = getLastDate.getDate();
     const totalDay = lastDate + firstDay;
     const monthRow = Math.ceil(totalDay / 7);
+=======
+
+  Calender.prototype.setMonthTitle = function () {
+    const monthYear = `${this.monthArr[this.month]} ${this.year}`;
+
+    this.$calender.querySelector('.month-control .month').textContent = monthYear;
+  };
+
+  Calender.prototype.markupMonth = function () {
+    const $tbody = this.$calender.querySelector('.calendar-tbl tbody');
+
+    const getFirstDay = new Date(this.year, this.month, 1);
+    const firstDay = getFirstDay.getDay();
+
+    const getLastDate = new Date(this.year, this.month + 1, 0);
+    const lastDate = getLastDate.getDate();
+
+    const totalDay = lastDate + firstDay;
+    const monthRow = Math.ceil(totalDay / 7);
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     const markup = `
     ${Array(monthRow).fill().map((row, rowIndex) => {
       return `
         <tr>
           ${Array(7).fill().map((day, dayIndex) => {
+<<<<<<< HEAD
         let findDay = (rowIndex * 7) + (dayIndex + 1) - firstDay;
         findDay = (findDay <= 0 || findDay > lastDate) ? '' : findDay;
         const isToday = this.firstLoad && findDay === this.today.getDate();
         const compareDate = `${(this.monthArr[this.month]).toLowerCase()}${findDay}${this.year}`;
         const isLastClick = compareDate === this.lastClickDate;
+=======
+
+        let findDay = (rowIndex * 7) + (dayIndex + 1) - firstDay;
+        findDay = (findDay <= 0 || findDay > lastDate) ? '' : findDay;
+
+        const isToday = this.firstLoad && findDay === this.today.getDate();
+        const compareDate = `${(this.monthArr[this.month]).toLowerCase()}${findDay}${this.year}`;
+        const isLastClick = compareDate === this.lastClickDate;
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
         const addBgClass = (isToday || isLastClick) ? 'on' : '';
         let hasTodoList = false;
         if(this.hasTodo) {
@@ -414,6 +685,10 @@
             hasTodoList = true;
           }
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
         return `
               <td ${hasTodoList ? `class='has-todo'` : ''}>
                 <a href="#" ${addBgClass ? `class=${addBgClass}` : ''} data-day="${dayIndex}">${findDay}</a>
@@ -424,25 +699,51 @@
       `;
     }).join('')}
   `;
+<<<<<<< HEAD
     $tbody.innerHTML = markup;
     this.clickDate();
   };
+=======
+
+    $tbody.innerHTML = markup;
+
+    this.clickDate();
+  };
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
   Calender.prototype.clickMonthArrow = function () {
     const $arrows = this.$calender.querySelectorAll('.month-control .button');
     let monthInterval;
     let isLongPress = false;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     $arrows.forEach(arrow => {
       arrow.addEventListener('mousedown', () => {
         isLongPress = true;
         monthInterval = setInterval(() => {this.changeMonth(arrow)}, 200);
       });
+<<<<<<< HEAD
       arrow.addEventListener('click', () => this.changeMonth(arrow));
+=======
+
+      arrow.addEventListener('click', () => this.changeMonth(arrow));
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
       arrow.addEventListener('mouseup', () => this.stopChangingMonth(isLongPress, monthInterval));
       arrow.addEventListener('mouseleave', () => this.stopChangingMonth(isLongPress, monthInterval));
     });
   };
+<<<<<<< HEAD
   Calender.prototype.changeMonth = function (arrow) {
     const isPrevButton = arrow.classList.contains('prev-button');
+=======
+
+  Calender.prototype.changeMonth = function (arrow) {
+    const isPrevButton = arrow.classList.contains('prev-button');
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     if (isPrevButton) {
       if (!this.month) {
         this.month = 11;
@@ -450,6 +751,10 @@
       } else {
         this.month -= 1;
       }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     } else {
       if (this.month === 11) {
         this.month = 0;
@@ -458,32 +763,62 @@
         this.month += 1;
       }
     }
+<<<<<<< HEAD
     this.setMonthTitle();
     this.markupMonth();
   };
+=======
+
+    this.setMonthTitle();
+    this.markupMonth();
+  };
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
   Calender.prototype.stopChangingMonth = function (isLongPress, monthInterval) {
     if (isLongPress) {
       clearInterval(monthInterval);
       isLongPress = false;
     }
   }
+<<<<<<< HEAD
   Calender.prototype.clickDate = function () {
     const $days = this.$calender.querySelectorAll('.calendar-tbl td a');
+=======
+
+  Calender.prototype.clickDate = function () {
+    const $days = this.$calender.querySelectorAll('.calendar-tbl td a');
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     $days.forEach((day) => {
       day.addEventListener('click', ev => {
         if (this.hasTodo) {
           this.syncTodo();
           this.resetTodoList();
         }
+<<<<<<< HEAD
         $days.forEach(el => el.classList.remove('on'));
         ev.currentTarget.classList.add('on');
         this.date = ev.currentTarget.textContent;
         this.day = ev.currentTarget.dataset.day;
+=======
+
+        $days.forEach(el => el.classList.remove('on'));
+        ev.currentTarget.classList.add('on');
+
+        this.date = ev.currentTarget.textContent;
+        this.day = ev.currentTarget.dataset.day;
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
         this.setDaily();
         if (this.hasTodo) this.importTodoList();
       });
     });
   };
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
   Calender.prototype.syncTodo = function () {
     const $todoTexts = Array.from(this.$todo.querySelectorAll('.todo-list .txt'));
     const $checkAll = this.$todo.querySelector('.check-all');
@@ -492,6 +827,7 @@
     const isDeletedAtPresent = !$todoTexts.length && this.saveTodo[day];
     const $checkBoxsofTodolist = this.$todo.querySelectorAll('.todo-list .check-todo');
     let checkedIndex = [];
+<<<<<<< HEAD
     if (isDeletedAtPresent) return delete this.saveTodo[day];
     if (hasNothingTodo) return;
     $checkBoxsofTodolist.forEach((box, index) => {
@@ -512,6 +848,38 @@
     const todoList = this.$todo.querySelector('.todo-list');
     this.tabState = 'all';
     tabs.forEach((tab, index) => index === 0 ? tab.classList.add('on') : tab.classList.remove('on'));
+=======
+
+    if (isDeletedAtPresent) return delete this.saveTodo[day];
+    if (hasNothingTodo) return;
+
+    $checkBoxsofTodolist.forEach((box, index) => {
+      if (box.checked === true) checkedIndex.push(index);
+    });
+
+    const todoListTextArray = $todoTexts.map(text => text.textContent);
+
+    this.saveTodo[day] = [];
+    this.saveTodo[day][0] = todoListTextArray;
+    this.saveTodo[day][1] = checkedIndex;
+
+    $checkAll.checked = false;
+  };
+
+  Calender.prototype.importTodoList = function () {
+    if (!this.saveTodo[this.lastClickDate] || !this.saveTodo[this.lastClickDate][0].length) return;
+
+    const isSavedTodo = this.saveTodo[this.lastClickDate];
+    const savedTodoList = isSavedTodo[0];
+    const savedCheckList = isSavedTodo[1];
+
+    const tabs = this.$todo.querySelectorAll('.tab-list a');
+    const todoList = this.$todo.querySelector('.todo-list');
+    this.tabState = 'all';
+
+    tabs.forEach((tab, index) => index === 0 ? tab.classList.add('on') : tab.classList.remove('on'));
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
     const markup = `
     ${savedTodoList.map((text,index) => {
       return `
@@ -525,6 +893,7 @@
       `;
     }).join('')}
   `;
+<<<<<<< HEAD
     todoList.innerHTML = markup;
     if (savedCheckList.length) {
       const checkboxes = this.$todo.querySelectorAll('.todo-list .check-todo');
@@ -535,14 +904,42 @@
     }
     this.initEvent();
   };
+=======
+
+    todoList.innerHTML = markup;
+
+    if (savedCheckList.length) {
+      const checkboxes = this.$todo.querySelectorAll('.todo-list .check-todo');
+
+      checkboxes.forEach((checkbox, index) => {
+        const isChecked = savedCheckList.includes(index);
+
+        if (isChecked) checkbox.checked = true;
+      });
+    }
+
+    this.initEvent();
+  };
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
   Calender.prototype.resetTodoList = function () {
     const $list = this.$todo.querySelector('.todo-list');
     const $tab = this.$todo.querySelector('.todo-tab');
     const $tabAll = $tab.querySelector('.all');
+<<<<<<< HEAD
     $list.innerHTML = '';
     $tab.classList.remove('on');
     $tabAll.click();
   };
+=======
+
+    $list.innerHTML = '';
+    $tab.classList.remove('on');
+    $tabAll.click();
+
+  };
+
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
   new Calender({
     wrapSelector: '.calendar-wrap',
     todoSelector:  '.todo',
@@ -550,4 +947,8 @@
   });
 </script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f

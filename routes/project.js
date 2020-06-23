@@ -3,11 +3,11 @@ var router = express.Router();
 
 
 router.get('/', function(req, res, next) {
-    res.render('licenseList');
+    res.render('projectList');
 });
 
 router.get('/add', function(req, res, next) {
-    res.render('licenseAdd');
+    res.render('projectAdd');
 });
 
 router.post('/add', function(req, res, next) {
@@ -15,7 +15,7 @@ router.post('/add', function(req, res, next) {
 });
 
 router.get('/update', function(req, res, next) {
-    res.render('licenseUpdate');
+    res.render('projectUpdates');
 });
 
 router.post('/update', function(req, res, next) {
@@ -23,7 +23,11 @@ router.post('/update', function(req, res, next) {
 });
 
 router.get('/view', function(req, res, next) {
-    res.render('licenseView');
+    res.render('projectView');
+});
+
+router.post('/view', function(req, res, next) {
+
 });
 
 module. exports = router;

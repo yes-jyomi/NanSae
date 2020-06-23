@@ -1,12 +1,440 @@
-/* 배경 */
-.body {
+html,
+body {
+  box-sizing: border-box;
+  background-color: white;
   width: 100%;
-  background-color: #78afd7;
-  font-family: "Noto Sans KR", sans-serif;
 }
 
-/* 폰트  */
-.f {
-  font-size: 1.05em;
-  font-family: "Noto Sans KR", sans-serif;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.calendar-wrap {
+  display: flex;
+  width: 1519px;
+  height: 700px;
+  margin: 52px auto;
+}
+
+.calendar-wrap h2 {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.daily {
+  width: 240px;
+  margin: 0px 20px;
+  padding: 0px 100px;
+}
+
+.daily .day {
+  font-size: 68px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.daily .date {
+  font-size: 180px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.month-control {
+  position: relative;
+  width: 500px;
+  margin: 75px 480px 0;
+  text-align: center;
+}
+
+.month-control .month {
+  display: inline-block;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.month-control button {
+  position: absolute;
+  top: 20px;
+  border: solid black;
+  border-width: 0 8px 8px 0;
+  padding: 6px;
+  background-color: initial;
+  line-height: 0;
+  font-size: 0;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.month-control .prev-button {
+  left: 0;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.month-control .next-button {
+  right: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.calendar-tbl {
+  margin: 25px auto 0;
+}
+
+.calendar-tbl caption {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.calendar-tbl th,
+.calendar-tbl td {
+  width: 92px;
+  height: 70px;
+  text-align: center;
+}
+
+.calendar-tbl th {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.calendar-tbl td a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 64px;
+}
+
+.calendar-tbl td a.on {
+  color: #fff;
+  background: #ed0002;
+}
+.calendar-tbl td.has-todo a:before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  background-color: #9eccfe;
+  border-radius: 50%;
+}
+
+.todo-wrap {
+  margin-top: auto;
+}
+
+.todolist h2 {
+  color: #000000;
+  margin: -300px 120px;
+  font-size: 40px;
+  padding: -300px;
+}
+
+.todo {
+  width: 372px;
+  margin: 350px 108px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.add-wrap {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.003);
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.add-wrap input[type="checkbox"] {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.add-wrap input[type="checkbox"] + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.add-wrap input[type="checkbox"] + label:before {
+  content: ">";
+  display: inline-block;
+  width: 50px;
+  height: 66px;
+  line-height: 58px;
+  text-align: center;
+  color: #e6e6e6;
+  transform: rotate(90deg);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.add-wrap input[type="checkbox"]:checked + label:before {
+  color: #ffff;
+}
+
+.add-input {
+  width: 500px;
+  height: 66px;
+  border: none;
+  padding: 0 10px;
+  font-size: 28px;
+  color: #4d4d4d;
+  outline: none;
+}
+
+.add-input::placeholder {
+  color: #e6e6e6;
+  font-style: italic;
+}
+
+.todo-list li {
+  display: flex;
+  position: relative;
+  padding-left: 50px;
+}
+
+.todo-list li + li {
+  border-top: 1px solid #ededed;
+}
+
+.todo-list li.hide {
+  display: none;
+}
+
+.todo-list li input[type="checkbox"] {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.todo-list input[type="checkbox"] + label {
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border: 1px solid #efefef;
+  border-radius: 50%;
+}
+
+.todo-list input[type="checkbox"]:checked + label {
+  border-color: #c7e0dc;
+}
+
+.todo-list input[type="checkbox"]:checked + label:before {
+  content: "\2714";
+  display: block;
+  color: #5dc2af;
+  line-height: 30px;
+  text-align: center;
+}
+
+.todo-list input[type="checkbox"] + label.hide {
+  display: none;
+}
+
+.todo-list .txt {
+  width: 490px;
+  padding: 16px 10px;
+  word-break: break-all;
+  color: #4d4d4d;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.todo-list .txt.hide {
+  display: none;
+}
+
+.todo-list input[type="checkbox"]:checked + label + .txt {
+  text-decoration: line-through;
+  color: #d9d9d9;
+}
+
+.todo-list .edit {
+  display: none;
+  width: 522px;
+  height: 60px;
+  padding: 0 10px;
+  font-size: 24px;
+  line-height: 1.2;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.todo-list .edit.on {
+  display: block;
+}
+
+.todo-list .del {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #cc9a9a;
+  font-weight: bold;
+  font-size: 24px;
+  height: 48px;
+  padding: 10px;
+}
+
+.todo-list .del:hover {
+  color: #af5b5e;
+}
+
+.todo-list .del.hide {
+  display: none;
+}
+
+.todo-tab {
+  display: none;
+  position: relative;
+  border-top: 1px solid #e6e6e6;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-tab.on {
+  display: block;
+}
+
+.tab-list {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
+.todo-tab .count {
+  color: #777;
+  font-size: 14px;
+  line-height: 40px;
+  padding: 0 0 0 16px;
+}
+
+.tab-list li a {
+  font-size: 14px;
+  display: block;
+  padding: 4px;
+  margin: 0 4px;
+  color: #777;
+}
+
+.tab-list a.on {
+  border: 1px solid #efd5d5;
+  border-radius: 5px;
+}
+
+.todo-tab .clear {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+  font-size: 14px;
+  line-height: 40px;
+  margin-right: 14px;
+}
+
+.todo-tab .clear.on {
+  display: block;
+}
+
+.todo-tab .clear:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 1920px) {
+  .calendar-wrap {
+    display: flex;
+    width: 1519px;
+    height: 700px;
+    margin: 52px auto;
+  }
+
+  .daily {
+    width: 240px;
+    padding: 0 180px;
+  }
+
+  .daily .day {
+    font-size: 68px;
+    font-weight: bold;
+    padding-top: 90px;
+    padding-right: 500px;
+    text-align: center;
+  }
+
+  .daily .date {
+    padding: 100px 0 55px;
+    font-size: 180px;
+    font-weight: bold;
+    padding-top: 22px;
+    text-align: center;
+  }
+
+  .month-control {
+    position: relative;
+    width: 500px;
+    margin: 75px 480px 0;
+    text-align: center;
+  }
+
+  .month-control .month {
+    display: inline-block;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .todolist h2 {
+    color: #000000;
+    margin: -300px 120px;
+    font-size: 40px;
+    padding: -300px;
+  }
+
+  .todo {
+    width: 372px;
+    margin: 350px 108px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  }
 }

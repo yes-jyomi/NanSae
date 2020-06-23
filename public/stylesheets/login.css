@@ -119,7 +119,7 @@ a:hover {
   color: #7d8389;
 }
 
-@media screen and (max-width: 638px) {
+@media screen and (max-width: 200px) {
   .login-section {
     max-width: 100%;
     padding: 0;

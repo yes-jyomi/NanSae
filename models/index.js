@@ -42,5 +42,6 @@ db.Education = require('./education')(sequelize, Sequelize);
 db.Portfolio = require('./portfolio')(sequelize, Sequelize);
 db.Project = require('./project')(sequelize, Sequelize);
 db.Score = require('./score')(sequelize, Sequelize);
+db.License = require('./license')(sequelize, Sequelize);
 
 module.exports = db;

@@ -14,56 +14,62 @@
   <link rel="stylesheet" href="/stylesheets/calendarList.css" />
   <!-- Bootstrap CSS -->
 
-  <!-- Bootstrap CSS -->
   <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
-  />
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+  <body class="body">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="logo" href="/"
+        ><img src="/imge/BLogo.png" width="79px" height="36px"
+      /></a>
       <button
-              type="button"
-              class="navbar-toggle collapsed"
-              data-toggle="collapse"
-              data-target="#bs-example-navbar-collapse-1"
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
       >
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-text" href="/">NANSAE</a>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="nav-list" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="navbar-left">
-          <a href="/calendar">일정</a>
-        </li>
-        <li><a href="/outdoor">외부할동</a></li>
-        <li><a href="/license">자격증</a></li>
-        <li><a href="/graph/score">그래프</a></li>
-        <li><a href="/portfolio">포트폴리오</a></li>
-      </ul>
-      <div class="navbar-right">
-        <ul class="nav navbar-nav">
-          <li class="navbar-rigth">
-            <a href="/users/login">로그인</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="link nav-link" href="/calendar">일정</a>
           </li>
-          <li><a href="/users/join">회원가입</a></li>
+          <li class="nav-item">
+            <a class="link nav-link" href="/outdoor">외부활동</a>
+          </li>
+          <li class="nav-item">
+            <a class="link nav-link" href="/license">자격증</a>
+          </li>
+          <li class="nav-item">
+            <a class="link nav-link" href="/graph/score">그래프</a>
+          </li>
+          <li class="nav-item">
+            <a class="link nav-link" href="/portfolio">포트폴리오</a>
+          </li>
         </ul>
+
+        <span class="navbar-text">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="link nav-link" href="/users/mypage">회원가입수정</a>
+            </li>
+            <li class="nav-item">
+              <a class="link nav-link" href="/users/logout">로그아웃</a>
+            </li>
+          </ul>
+        </span>
       </div>
-    </div>
-    <!-- /.navbar-collapse -->
-  </div>
-  <!-- /.container-fluid -->
-</nav>
+    </nav>
 
 <div class="calendar-wrap">
   <h2>Calendar</h2>

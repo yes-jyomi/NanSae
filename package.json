@@ -1,27 +1,16 @@
 {
   "name": "nansae",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "dateformat": "^3.0.3",
-    "debug": "~2.6.9",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
-    "express-server": "^0.7.0",
-    "express-session": "^1.17.1",
-    "firebase": "^7.14.5",
-    "http-errors": "^1.6.3",
-<<<<<<< HEAD
-    "morgan": "~1.9.1",
-    "mysql": "^2.18.1"
-  },
+  "version": "1.0.0",
   "description": "2020 it-show",
   "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "firebase": "^7.14.5"
+  },
   "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yes-jyomi/NanSae.git"
@@ -32,13 +21,4 @@
     "url": "https://github.com/yes-jyomi/NanSae/issues"
   },
   "homepage": "https://github.com/yes-jyomi/NanSae#readme"
-=======
-    "morgan": "^1.9.1",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.1.0",
-    "passport": "^0.4.1",
-    "passport-local": "^1.0.0",
-    "sequelize": "^5.21.11"
-  }
->>>>>>> 40142630f8df9c8823a1a4d184aa1555d444fc4f
 }

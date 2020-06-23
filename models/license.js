@@ -1,11 +1,35 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const license = sequelize.define('license', {
-    license_idx: DataTypes.INTEGER,
-    user_id: DataTypes.STRING,
-    license_name: DataTypes.STRING,
-    license_comp: DataTypes.STRING,
-    license_date: DataTypes.DATE
+    license_idx: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true
+    },
+    user_id: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    license_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    license_comp: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    license_date: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false
+    }
   }, {});
   license.associate = function(models) {
     // associations can be defined here

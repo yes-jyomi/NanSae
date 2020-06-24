@@ -9,16 +9,18 @@ router.get('/', function(req, res, next) {
             user_id: 's2018w01'
         }
     }).then((result) => {
-        res.render('licenseList', {
-            index: result.license_idx,
-            title: result.license_name,
-            company: result.license_comp,
-            date: result.license_date
-        });
+        console.log('ru : ' +  result[0].license_idx);
+        res.render('licenseList', {result: result});
+        // res.render('licenseList', {
+        //     index: result.license_idx,
+        //     title: result.license_name,
+        //     company: result.license_comp,
+        //     date: result.license_date
+        // });0
     }).catch(err => {
         console.error(err);
     });
-    // res.render('licenseList');
+     // res.render('licenseList');
 });
 
 router.get('/add', function(req, res, next) {
@@ -31,20 +33,20 @@ router.post('/add', function(req, res, next) {
     const company = req.body.license_company;
 
     License.create({
-        where:{
-            user_id: 's2018w01'
-        },
-        attributes: {
-            license_name: title,
-            license_date: date,
-            license_comp: company,
-            createdAt: now(),
-            updatedAt: now()
-        }
-    }).then((result) => {
-       res.redirect('/license/');
-    }).catch(err => {
+        license_idx: 0,
+        user_id: 's2018w01',
+        license_name: title,
+        license_comp: company,
+        license_date: date,
+        createdAt: date,
+        updatedAt: date
+    }).then( result => {
+        console.log('자격증이 추가되셨습니다.');
+        res.redirect('/license/');
+    }).catch( err => {
+        console.log('자격증 추가에 실패하셨습니다.');
         console.error(err);
+        res.redirect('/license/');
     });
 });
 

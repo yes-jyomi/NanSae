@@ -9,16 +9,18 @@ router.get('/', function(req, res, next) {
             user_id: 's2018w01'
         }
     }).then((result) => {
-        res.render('licenseList', {
-            index: result.license_idx,
-            title: result.license_name,
-            company: result.license_comp,
-            date: result.license_date
-        });
+        console.log('ru : ' +  result[0].license_idx);
+        res.render('licenseList', {result: result});
+        // res.render('licenseList', {
+        //     index: result.license_idx,
+        //     title: result.license_name,
+        //     company: result.license_comp,
+        //     date: result.license_date
+        // });0
     }).catch(err => {
         console.error(err);
     });
-    // res.render('licenseList');
+     // res.render('licenseList');
 });
 
 router.get('/add', function(req, res, next) {

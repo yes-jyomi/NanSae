@@ -19,14 +19,16 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     license_date: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false
     },
     createdAt: {
+      dateStrings: 'date',
       type: DataTypes.DATE,
       allowNull: false
     },
     updatedAt: {
+      dateStrings: 'date',
       type: DataTypes.DATE,
       allowNull: false
     }

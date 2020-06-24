@@ -33,18 +33,21 @@ router.post('/add', function(req, res, next) {
     console.log(title + ":" + date1 + ":" + date2 + ":" + content);
 
     Activity.create({
+        act_idx: 1,
         user_id: 's2018w01',
         act_name: title,
         act_start: date1,
         act_end: date2,
         act_content: content,
-        createdAt: now(),
-        updatedAt: now()
-    }).then((result) => {
-        console.log(result);
+        createdAt: date1,
+        updatedAt: date2
+    }).then( result => {
+        console.log(user_id + '님, 외부활동이 추가되셨습니다.');
         res.redirect('/outdoor/');
-    }).catch(err => {
+    }).catch( err => {
+        console.log('외부활동 추가에 실패하셨습니다.');
         console.error(err);
+        res.redirect('/outdoor/');
     });
 });
 

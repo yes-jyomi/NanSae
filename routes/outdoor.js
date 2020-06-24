@@ -5,9 +5,9 @@ const {Activity} = require('../models');
 
 router.get('/', function(req, res, next) {
     Activity.findAll({
-       where: {
-           user_id: 's2018w01'
-       }
+        where: {
+            user_id: 's2018w01'
+        }
     }).then((list) => {
         res.render('outdoorList', {
             title: list.act_name,
@@ -38,9 +38,11 @@ router.post('/add', function(req, res, next) {
         act_name: title,
         act_start: date1,
         act_end: date2,
-        act_content: content
+        act_content: content,
+        createdAt: date1,
+        updatedAt: date2
     }).then( result => {
-        alert(user_id + '님, 외부활동이 추가되셨습니다.');
+        console.log(user_id + '님, 외부활동이 추가되셨습니다.');
         res.redirect('/outdoor/');
     }).catch( err => {
         console.log('외부활동 추가에 실패하셨습니다.');

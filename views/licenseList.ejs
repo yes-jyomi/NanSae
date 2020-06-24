@@ -89,17 +89,25 @@
           </tr>
         </thead>
         <tbody>
+        <% if (result) { %>
+          <!-- 자격증이 있다면 -->
+          <% for(var i = 0 ; i < result.length ; i++) { %>
+        <tr>
+          <td><%= i + 1%></td>
+          <td><a class="view" href="license/view"><%= result[i].license_name%></a></td>
+          <td><%=  result[i].license_date %></td>
+          <%= console.log(result[i].license_date)%>
+          <td><%= result[i].license_comp%></td>
+        </tr>
+        <%
+        }
+        } else {
+        %>
           <!-- 만약 자격증이 없다면 -->
           <tr>
             <td class="text-center" colspan="4">등록된 자격증이 없습니다.</td>
           </tr>
-          <!-- 자격증이 있다면 -->
-          <tr>
-            <td>165</td>
-            <td><a class="view" href="license/view">ITQ 한글</a></td>
-            <td>2016.12.02</td>
-            <td>한국생산성본부</td>
-          </tr>
+        <% } %>
         </tbody>
       </table>
     </div>
